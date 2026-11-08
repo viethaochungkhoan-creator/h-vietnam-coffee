@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlRoot">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H-ViETNAM - Premium Vietnam Green Coffee Bean Exporter</title>
+    <title id="pageTitle">H-ViETNAM - Premium Vietnam Green Coffee Bean Exporter</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
@@ -16,12 +16,14 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#1C130E',
-                            brown: '#3B2314',
+                            darkCoffee: '#231712', /* Tone cà phê đậm thay cho màu đen */
+                            brown: '#3B2314',      /* Tone cà phê nguyên bản */
+                            lightCoffee: '#4E3120',/* Tone cà phê sáng */
                             amber: '#8B5A2B',
                             gold: '#D4AF37',
                             cream: '#FDFBF7',
-                            teal: '#124B63',
+                            teal: '#124B63',       /* Màu xanh nước biển thương hiệu */
+                            oceanDark: '#0D3647',  /* Xanh nước biển đậm */
                         }
                     },
                     fontFamily: {
@@ -62,20 +64,18 @@
 </head>
 <body class="bg-brand-cream text-gray-800 font-sans antialiased selection:bg-brand-gold selection:text-white">
 
-    <!-- Top Navigation Header -->
-    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md text-white border-b border-brand-amber/20 shadow-xl">
+    <!-- Top Navigation Header (Nền xanh nước biển đậm sang trọng) -->
+    <header class="sticky top-0 z-50 bg-brand-oceanDark/95 backdrop-blur-md text-white border-b border-brand-teal/40 shadow-xl">
         <div class="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20 px-4 sm:px-0">
+            <div class="flex items-center justify-between h-20">
                 
-                <!-- Ocean Blue Brand Logo Rectangle (Tràn viền ngang trên mobile, bo góc trên desktop) -->
-                <a href="#" class="flex items-center bg-brand-teal px-4 sm:px-4 py-2 w-full sm:w-auto rounded-none sm:rounded-xl border-y sm:border border-teal-500/30 shadow-lg hover:brightness-110 transition-all duration-300 -mx-4 sm:mx-0">
-                    <div class="flex items-center gap-3">
-                        <!-- Star & Coffee Bean Logo Icon with Reversed S-Curve (Left to Right) -->
+                <!-- Ocean Blue Brand Logo Rectangle (Tràn viền 100% chiều ngang trên mobile)[cite: 1, 2, 3] -->
+                <a href="#" class="flex items-center bg-brand-teal px-4 sm:px-4 py-3 sm:py-2 w-full sm:w-auto rounded-none sm:rounded-xl border-y sm:border border-teal-400/30 shadow-lg hover:brightness-110 transition-all duration-300">
+                    <div class="flex items-center gap-3 w-full sm:w-auto">
+                        <!-- Star & Coffee Bean Logo Icon -->
                         <div class="flex items-center justify-center w-10 h-10 flex-shrink-0">
                             <svg class="w-10 h-10 drop-shadow-md" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Star Shape with Gold Border and Brown Fill -->
                                 <path d="M50 4L62.8 33.2L94.5 35.8L70 56.8L77.8 88L50 71.5L22.2 88L30 56.8L5.5 35.8L37.2 33.2L50 4Z" fill="#3B2314" stroke="#D4AF37" stroke-width="4.5" stroke-linejoin="round"/>
-                                <!-- Vertical Oval Coffee Bean with Inverted S-Curve (Starts top-left, curves down to bottom-right) -->
                                 <ellipse cx="50" cy="49" rx="13" ry="17" stroke="white" stroke-width="3.5" fill="none"/>
                                 <path d="M44 34C55 42 45 56 56 64" stroke="white" stroke-width="3.2" stroke-linecap="round"/>
                             </svg>
@@ -92,43 +92,60 @@
 
                 <!-- Navigation Links -->
                 <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-                    <a href="#about" class="hover:text-brand-gold transition-colors">About H-ViETNAM</a>
-                    <a href="#products" class="hover:text-brand-gold transition-colors">Green Coffee Specs</a>
-                    <a href="#strengths" class="hover:text-brand-gold transition-colors">Export Strengths</a>
-                    <a href="#shipping" class="hover:text-brand-gold transition-colors">Global Logistics</a>
-                    <a href="#contact" class="hover:text-brand-gold transition-colors">Contact Us</a>
+                    <a href="#about" class="hover:text-brand-gold transition-colors" data-i18n="nav_about">About H-ViETNAM</a>
+                    <a href="#products" class="hover:text-brand-gold transition-colors" data-i18n="nav_specs">Green Coffee Specs</a>
+                    <a href="#strengths" class="hover:text-brand-gold transition-colors" data-i18n="nav_strengths">Export Strengths</a>
+                    <a href="#shipping" class="hover:text-brand-gold transition-colors" data-i18n="nav_logistics">Global Logistics</a>
+                    <a href="#contact" class="hover:text-brand-gold transition-colors" data-i18n="nav_contact">Contact Us</a>
                 </nav>
 
-                <!-- RFQ Button -->
+                <!-- Language Switcher & RFQ Button -->
                 <div class="hidden lg:flex items-center gap-4">
-                    <a href="#contact" class="bg-gradient-to-r from-brand-amber to-brand-gold text-brand-dark font-bold px-5 py-2.5 rounded-lg shadow-md hover:brightness-110 transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-paper-plane"></i> Request Quote (RFQ)
+                    <!-- Language Dropdown -->
+                    <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-brand-brown text-brand-gold border border-brand-amber/40 rounded-lg px-3 py-1.5 text-xs font-bold focus:outline-none focus:border-brand-gold cursor-pointer">
+                        <option value="en">English (EN)</option>
+                        <option value="fr">Français (FR)</option>
+                        <option value="ar">العربية (AR)</option>
+                    </select>
+
+                    <a href="#contact" class="bg-gradient-to-r from-brand-amber to-brand-gold text-brand-darkCoffee font-bold px-5 py-2.5 rounded-lg shadow-md hover:brightness-110 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> <span data-i18n="btn_rfq">Request Quote (RFQ)</span>
                     </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-brand-dark text-white overflow-hidden py-24 lg:py-32 border-b border-brand-amber/20">
+    <!-- Mobile Language Bar -->
+    <div class="bg-brand-brown py-2 px-4 flex justify-between items-center text-xs border-b border-brand-amber/20 lg:hidden">
+        <span class="text-brand-gold font-bold" data-i18n="lang_label">Select Language:</span>
+        <select id="langSelectMobile" onchange="changeLanguage(this.value)" class="bg-brand-darkCoffee text-brand-gold border border-brand-amber/40 rounded px-2 py-1 font-bold focus:outline-none">
+            <option value="en">English (EN)</option>
+            <option value="fr">Français (FR)</option>
+            <option value="ar">العربية (AR)</option>
+        </select>
+    </div>
+
+    <!-- Hero Section (Nền màu cà phê đậm sang trọng) -->
+    <section class="relative bg-brand-darkCoffee text-white overflow-hidden py-24 lg:py-32 border-b border-brand-amber/20">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl">
                 <div class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6 text-brand-gold text-xs uppercase tracking-widest font-semibold">
-                    <i class="fa-solid fa-globe"></i> Direct Exporter from Vietnam Origins
+                    <i class="fa-solid fa-globe"></i> <span data-i18n="hero_tag">Direct Exporter from Vietnam Origins</span>
                 </div>
                 
                 <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                    <span class="inline-flex items-baseline"><span class="text-5xl sm:text-6xl lg:text-7xl font-black">H-V</span><span class="text-3xl sm:text-4xl lg:text-5xl font-bold lowercase">ietnam</span></span> Coffee — Reliable Supplier of <span class="text-brand-gold not-italic">Green Coffee Beans</span>
+                    <span class="inline-flex items-baseline"><span class="text-5xl sm:text-6xl lg:text-7xl font-black">H-V</span><span class="text-3xl sm:text-4xl lg:text-5xl font-bold lowercase">ietnam</span></span> <span data-i18n="hero_title_middle">Coffee — Reliable Supplier of</span> <span class="text-brand-gold not-italic" data-i18n="hero_title_highlight">Green Coffee Beans</span>
                 </h1>
                 
-                <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                <p class="text-gray-300 text-lg leading-relaxed mb-8" data-i18n="hero_desc">
                     Hao Vietnam Coffee Co., Ltd. supplies high-grade Robusta and Arabica green coffee beans directly from procurement hubs in Dak Lak and Lam Dong. We strictly ensure top export grade specs, reliable volume, and competitive global FOB/CIF pricing.
                 </p>
                 <div class="flex flex-wrap items-center gap-4">
-                    <a href="#products" class="bg-brand-gold text-brand-dark font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-yellow-400 transition-all">
+                    <a href="#products" class="bg-brand-gold text-brand-darkCoffee font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-yellow-400 transition-all" data-i18n="btn_specs">
                         Explore Specifications
                     </a>
-                    <a href="#about" class="border border-white/30 hover:border-brand-gold text-white hover:text-brand-gold px-8 py-4 rounded-xl font-semibold transition-all">
+                    <a href="#about" class="border border-white/30 hover:border-brand-gold text-white hover:text-brand-gold px-8 py-4 rounded-xl font-semibold transition-all" data-i18n="btn_overview">
                         Company Overview
                     </a>
                 </div>
@@ -136,25 +153,25 @@
         </div>
     </section>
 
-    <!-- Key Highlights Bar -->
+    <!-- Key Highlights Bar (Nền màu cà phê) -->
     <section class="bg-brand-brown text-white py-8 border-b border-brand-amber/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div class="p-4 border-r border-white/10 last:border-0">
-                    <div class="text-brand-gold text-xl sm:text-2xl font-bold mb-1">Dak Lak & Lam Dong</div>
-                    <div class="text-[11px] text-gray-300 uppercase tracking-wider">Raw Material Procurement Centers</div>
+                    <div class="text-brand-gold text-xl sm:text-2xl font-bold mb-1" data-i18n="hl_1_title">Dak Lak & Lam Dong</div>
+                    <div class="text-[11px] text-gray-300 uppercase tracking-wider" data-i18n="hl_1_sub">Raw Material Procurement Centers</div>
                 </div>
                 <div class="p-4 border-r border-white/10 last:border-0">
-                    <div class="text-brand-gold text-xl sm:text-2xl font-bold mb-1">Screens 13 to 18</div>
-                    <div class="text-[11px] text-gray-300 uppercase tracking-wider">Cleaned & Wet Polished Robusta</div>
+                    <div class="text-brand-gold text-xl sm:text-2xl font-bold mb-1" data-i18n="hl_2_title">Screens 13 to 18</div>
+                    <div class="text-[11px] text-gray-300 uppercase tracking-wider" data-i18n="hl_2_sub">Cleaned & Wet Polished Robusta</div>
                 </div>
                 <div class="p-4 border-r border-white/10 last:border-0">
-                    <div class="text-brand-gold text-xl sm:text-2xl font-bold mb-1">100% Inspected</div>
-                    <div class="text-[11px] text-gray-300 uppercase tracking-wider">Independent Quality Assurance</div>
+                    <div class="text-brand-gold text-xl sm:text-2xl font-bold mb-1" data-i18n="hl_3_title">100% Inspected</div>
+                    <div class="text-[11px] text-gray-300 uppercase tracking-wider" data-i18n="hl_3_sub">Independent Quality Assurance</div>
                 </div>
                 <div class="p-4">
-                    <div class="text-brand-gold text-xl sm:text-2xl font-bold mb-1">Bulk Capacity</div>
-                    <div class="text-[11px] text-gray-300 uppercase tracking-wider">Export Packaging in 60kg Jute Bags</div>
+                    <div class="text-brand-gold text-xl sm:text-2xl font-bold mb-1" data-i18n="hl_4_title">Bulk Capacity</div>
+                    <div class="text-[11px] text-gray-300 uppercase tracking-wider" data-i18n="hl_4_sub">Export Packaging in 60kg Jute Bags</div>
                 </div>
             </div>
         </div>
@@ -167,24 +184,24 @@
                 
                 <!-- Text Content -->
                 <div class="space-y-6">
-                    <span class="text-brand-amber text-xs font-bold uppercase tracking-widest">Message from Board of Directors</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">Built on Credibility, Honesty & Long-Term Partnerships</h2>
-                    <p class="text-gray-600 leading-relaxed">
+                    <span class="text-brand-amber text-xs font-bold uppercase tracking-widest" data-i18n="about_tag">Message from Board of Directors</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-darkCoffee" data-i18n="about_title">Built on Credibility, Honesty & Long-Term Partnerships</h2>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="about_p1">
                         Dear Valued Customers and Partners,<br><br>
-                        First of all, <strong>Hao Vietnam Coffee Co., Ltd. (<span class="brand-logo-text text-brand-dark"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span>)</strong> would like to extend our sincere greetings and deepest gratitude for your trust, cooperation, and support.
+                        First of all, <strong>Hao Vietnam Coffee Co., Ltd. (<span class="brand-logo-text text-brand-darkCoffee"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span>)</strong> would like to extend our sincere greetings and deepest gratitude for your trust, cooperation, and support.
                     </p>
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-gray-600 leading-relaxed" data-i18n="about_p2">
                         H-ViETNAM aims to build long-term, sustainable, and mutually beneficial partnerships with international buyers. We view the fulfillment of every order as a noble mission, executed with integrity and honesty, regarding credibility as the true foundation of our cooperation.
                     </p>
 
                     <div class="pt-2 flex items-center gap-4 text-xs font-semibold text-gray-500">
-                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-amber"></i> Direct Farm Origin</span>
-                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-amber"></i> Independent Lab Tests</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-amber"></i> <span data-i18n="about_chk1">Direct Farm Origin</span></span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-amber"></i> <span data-i18n="about_chk2">Independent Lab Tests</span></span>
                     </div>
                 </div>
 
-                <!-- Interactive Image Slider (Updated 8 Optimized Images) -->
-                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-brand-dark group">
+                <!-- Interactive Image Slider (Nền khung ảnh tone cà phê) -->
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-brand-darkCoffee group">
                     
                     <div class="relative h-[480px] w-full">
                         
@@ -192,9 +209,9 @@
                         <div class="carousel-slide active h-full w-full">
                             <img src="Anh_Chan_Dung_CEO-.jpg" alt="CEO of H-ViETNAM Coffee" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 text-white">
-                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider">Leadership</span>
-                                <h4 class="text-lg font-bold">CEO & Board of Directors</h4>
-                                <p class="text-xs text-gray-300">Committed to integrity, transparency, and sustainable global supply.</p>
+                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider" data-i18n="slide_1_tag">Leadership</span>
+                                <h4 class="text-lg font-bold" data-i18n="slide_1_title">CEO & Board of Directors</h4>
+                                <p class="text-xs text-gray-300" data-i18n="slide_1_desc">Committed to integrity, transparency, and sustainable global supply.</p>
                             </div>
                         </div>
 
@@ -202,9 +219,9 @@
                         <div class="carousel-slide h-full w-full">
                             <img src="Anh_CEO_Kiem-Tra_Ca_Phe--.jpg" alt="H-ViETNAM Operations" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 text-white">
-                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider">Quality Assurance</span>
-                                <h4 class="text-lg font-bold">On-Site Warehouse & Cargo Inspection</h4>
-                                <p class="text-xs text-gray-300">Direct quality checking at origin warehouses in Dak Lak & Lam Dong.</p>
+                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider" data-i18n="slide_2_tag">Quality Assurance</span>
+                                <h4 class="text-lg font-bold" data-i18n="slide_2_title">On-Site Warehouse & Cargo Inspection</h4>
+                                <p class="text-xs text-gray-300" data-i18n="slide_2_desc">Direct quality checking at origin warehouses in Dak Lak & Lam Dong.</p>
                             </div>
                         </div>
 
@@ -212,7 +229,7 @@
                         <div class="carousel-slide h-full w-full">
                             <img src="1-.png" alt="Robusta Grade 1 Screen 18 Cleaned" class="w-full h-full object-contain bg-white">
                             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 text-white">
-                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider">Export Specification</span>
+                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider" data-i18n="slide_prod_tag">Export Specification</span>
                                 <h4 class="text-lg font-bold">Robusta Grade 1, Screen 18 (Cleaned)</h4>
                                 <p class="text-xs text-gray-300">Min 90% Screen 18 | Moisture max 12.5% | Black/Foreign matter max 0.1%.</p>
                             </div>
@@ -222,7 +239,7 @@
                         <div class="carousel-slide h-full w-full">
                             <img src="2-.png" alt="Robusta Grade 1 Screen 18 Wet Polished" class="w-full h-full object-contain bg-white">
                             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 text-white">
-                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider">Export Specification</span>
+                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider" data-i18n="slide_prod_tag">Export Specification</span>
                                 <h4 class="text-lg font-bold">Robusta Grade 1, Screen 18 (Wet Polished)</h4>
                                 <p class="text-xs text-gray-300">Min 90% Screen 18 | Moisture max 12.5% | Wet polished finish.</p>
                             </div>
@@ -232,7 +249,7 @@
                         <div class="carousel-slide h-full w-full">
                             <img src="3-.png" alt="Robusta Grade 1 Screen 16 Wet Polished" class="w-full h-full object-contain bg-white">
                             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 text-white">
-                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider">Export Specification</span>
+                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider" data-i18n="slide_prod_tag">Export Specification</span>
                                 <h4 class="text-lg font-bold">Robusta Grade 1, Screen 16 (Wet Polished)</h4>
                                 <p class="text-xs text-gray-300">Min 90% Screen 16 | Moisture max 12.5% | Polished clean beans.</p>
                             </div>
@@ -242,7 +259,7 @@
                         <div class="carousel-slide h-full w-full">
                             <img src="4-.png" alt="Robusta Grade 1 Screen 16 Standard" class="w-full h-full object-contain bg-white">
                             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 text-white">
-                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider">Export Specification</span>
+                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider" data-i18n="slide_prod_tag">Export Specification</span>
                                 <h4 class="text-lg font-bold">Robusta Grade 1, Screen 16 (Standard)</h4>
                                 <p class="text-xs text-gray-300">Min 90% Screen 16 | Moisture max 12.5% | Commercial standard.</p>
                             </div>
@@ -252,7 +269,7 @@
                         <div class="carousel-slide h-full w-full">
                             <img src="5-.png" alt="Robusta Grade 1 Screen 16 Cleaned" class="w-full h-full object-contain bg-white">
                             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 text-white">
-                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider">Export Specification</span>
+                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider" data-i18n="slide_prod_tag">Export Specification</span>
                                 <h4 class="text-lg font-bold">Robusta Grade 1, Screen 16 (Cleaned)</h4>
                                 <p class="text-xs text-gray-300">Min 90% Screen 16 | Moisture max 12.5% | Cleaned grade.</p>
                             </div>
@@ -262,7 +279,7 @@
                         <div class="carousel-slide h-full w-full">
                             <img src="6-.png" alt="Robusta Grade 2 Screen 13 Standard" class="w-full h-full object-contain bg-white">
                             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 text-white">
-                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider">Export Specification</span>
+                                <span class="text-brand-gold text-xs font-bold uppercase tracking-wider" data-i18n="slide_prod_tag">Export Specification</span>
                                 <h4 class="text-lg font-bold">Robusta Grade 2, Screen 13 (Standard)</h4>
                                 <p class="text-xs text-gray-300">Min 90% Screen 13 | Moisture max 13% | Export standard.</p>
                             </div>
@@ -271,10 +288,10 @@
                     </div>
 
                     <!-- Navigation Controls -->
-                    <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-brand-gold hover:text-brand-dark text-white flex items-center justify-center transition-all border border-white/20 z-20">
+                    <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-brand-gold hover:text-brand-darkCoffee text-white flex items-center justify-center transition-all border border-white/20 z-20">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
-                    <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-brand-gold hover:text-brand-dark text-white flex items-center justify-center transition-all border border-white/20 z-20">
+                    <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 hover:bg-brand-gold hover:text-brand-darkCoffee text-white flex items-center justify-center transition-all border border-white/20 z-20">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
 
@@ -296,43 +313,43 @@
         </div>
     </section>
 
-    <!-- Export Strengths Section -->
+    <!-- Export Strengths Section (Nền màu cà phê) -->
     <section id="strengths" class="py-16 bg-brand-brown text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-brand-gold text-xs font-bold uppercase tracking-widest">Core Competencies</span>
-                <h2 class="font-serif text-3xl font-bold mt-2">Why Partner with <span class="brand-logo-text"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span>?</h2>
+                <span class="text-brand-gold text-xs font-bold uppercase tracking-widest" data-i18n="strengths_tag">Core Competencies</span>
+                <h2 class="font-serif text-3xl font-bold mt-2"><span data-i18n="strengths_title_pre">Why Partner with</span> <span class="brand-logo-text"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span>?</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-brand-dark p-6 rounded-xl border border-brand-amber/30 space-y-3">
+                <div class="bg-brand-darkCoffee p-6 rounded-xl border border-brand-amber/30 space-y-3">
                     <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center font-bold text-lg">1</div>
-                    <h3 class="font-bold text-lg text-white">High-Quality Products</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed">Supplying premium Robusta green coffee beans across all screen sizes (13, 14, 16, 18) and Arabica (wet, dry, and honey methods).</p>
+                    <h3 class="font-bold text-lg text-white" data-i18n="str_1_title">High-Quality Products</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed" data-i18n="str_1_desc">Supplying premium Robusta green coffee beans across all screen sizes (13, 14, 16, 18) and Arabica (wet, dry, and honey methods).</p>
                 </div>
 
-                <div class="bg-brand-dark p-6 rounded-xl border border-brand-amber/30 space-y-3">
+                <div class="bg-brand-darkCoffee p-6 rounded-xl border border-brand-amber/30 space-y-3">
                     <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center font-bold text-lg">2</div>
-                    <h3 class="font-bold text-lg text-white">Reasonable Pricing</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed">Offering competitive price points suitable for all international market segments, from commercial roasters to specialty importers.</p>
+                    <h3 class="font-bold text-lg text-white" data-i18n="str_2_title">Reasonable Pricing</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed" data-i18n="str_2_desc">Offering competitive price points suitable for all international market segments, from commercial roasters to specialty importers.</p>
                 </div>
 
-                <div class="bg-brand-dark p-6 rounded-xl border border-brand-amber/30 space-y-3">
+                <div class="bg-brand-darkCoffee p-6 rounded-xl border border-brand-amber/30 space-y-3">
                     <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center font-bold text-lg">3</div>
-                    <h3 class="font-bold text-lg text-white">Independent Inspection</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed">Adhering strictly to independent quality inspection protocols to ensure delivered shipments meet committed contract specs.</p>
+                    <h3 class="font-bold text-lg text-white" data-i18n="str_3_title">Independent Inspection</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed" data-i18n="str_3_desc">Adhering strictly to independent quality inspection protocols to ensure delivered shipments meet committed contract specs.</p>
                 </div>
 
-                <div class="bg-brand-dark p-6 rounded-xl border border-brand-amber/30 space-y-3">
+                <div class="bg-brand-darkCoffee p-6 rounded-xl border border-brand-amber/30 space-y-3">
                     <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center font-bold text-lg">4</div>
-                    <h3 class="font-bold text-lg text-white">Timely Bulk Supply</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed">Guaranteeing on-time container delivery schedules and continuous high-volume supply capability throughout the crop season.</p>
+                    <h3 class="font-bold text-lg text-white" data-i18n="str_4_title">Timely Bulk Supply</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed" data-i18n="str_4_desc">Guaranteeing on-time container delivery schedules and continuous high-volume supply capability throughout the crop season.</p>
                 </div>
 
-                <div class="bg-brand-dark p-6 rounded-xl border border-brand-amber/30 space-y-3">
+                <div class="bg-brand-darkCoffee p-6 rounded-xl border border-brand-amber/30 space-y-3">
                     <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center font-bold text-lg">5</div>
-                    <h3 class="font-bold text-lg text-white">Network of affiliated farming households</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed">We collaborate with 10,000 farming households, with an output reaching hundreds of thousands of tons. By choosing us, you can benefit from prices approximately 2% lower than those offered by other Vietnamese companies.</p>
+                    <h3 class="font-bold text-lg text-white" data-i18n="str_5_title">Network of affiliated farming households</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed" data-i18n="str_5_desc">We collaborate with 10,000 farming households, with an output reaching hundreds of thousands of tons. By choosing us, you can benefit from prices approximately 2% lower than those offered by other Vietnamese companies.</p>
                 </div>
             </div>
         </div>
@@ -342,124 +359,124 @@
     <section id="products" class="py-20 bg-brand-cream">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-brand-amber text-xs font-bold uppercase tracking-widest">Products Supplied for Export</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark mt-2"><span class="brand-logo-text"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span> Export Specifications</h2>
-                <p class="text-gray-600 mt-3 text-sm">All products are packed in 60kg net single new jute bags, clean and free from mold, live insects, or foreign odors.</p>
+                <span class="text-brand-amber text-xs font-bold uppercase tracking-widest" data-i18n="prod_tag">Products Supplied for Export</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-darkCoffee mt-2"><span class="brand-logo-text"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span> <span data-i18n="prod_title_suf">Export Specifications</span></h2>
+                <p class="text-gray-600 mt-3 text-sm" data-i18n="prod_desc">All products are packed in 60kg net single new jute bags, clean and free from mold, live insects, or foreign odors.</p>
             </div>
 
             <!-- Product Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Product 1 -->
                 <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-200 flex flex-col">
-                    <div class="p-6 bg-brand-dark text-white">
-                        <span class="text-xs font-bold text-brand-gold uppercase tracking-wider">Grade 1 • Cleaned</span>
+                    <div class="p-6 bg-brand-darkCoffee text-white">
+                        <span class="text-xs font-bold text-brand-gold uppercase tracking-wider" data-i18n="prod_badge_1">Grade 1 • Cleaned</span>
                         <h3 class="text-xl font-bold font-serif mt-1">Robusta Screen 18 Cleaned</h3>
                     </div>
                     <div class="p-6 flex-grow space-y-3 text-sm">
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Screen Size:</span> <span class="font-bold">Min 90% over screen 18 (7.1 mm)</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Moisture:</span> <span class="font-bold">Max 12.5%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Foreign Matter:</span> <span class="font-bold">Max 0.1%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Black Beans:</span> <span class="font-bold">Max 0.1%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Broken Beans:</span> <span class="font-bold">Max 0.3%</span></div>
-                        <div class="flex justify-between pt-1"><span class="text-gray-500">Packing:</span> <span class="font-bold">In 60kg Net Single New Jute Bag</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_screen">Screen Size:</span> <span class="font-bold">Min 90% over screen 18 (7.1 mm)</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_moisture">Moisture:</span> <span class="font-bold">Max 12.5%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_foreign">Foreign Matter:</span> <span class="font-bold">Max 0.1%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_black">Black Beans:</span> <span class="font-bold">Max 0.1%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_broken">Broken Beans:</span> <span class="font-bold">Max 0.3%</span></div>
+                        <div class="flex justify-between pt-1"><span class="text-gray-500" data-i18n="spec_packing">Packing:</span> <span class="font-bold" data-i18n="spec_pack_val">In 60kg Net Single New Jute Bag</span></div>
                     </div>
                     <div class="p-4 bg-gray-50 border-t text-center">
-                        <a href="#contact" class="text-brand-amber hover:text-brand-dark font-bold text-sm inline-flex items-center gap-1">Request Quote <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                        <a href="#contact" class="text-brand-amber hover:text-brand-darkCoffee font-bold text-sm inline-flex items-center gap-1"><span data-i18n="btn_quote">Request Quote</span> <i class="fa-solid fa-arrow-right text-xs"></i></a>
                     </div>
                 </div>
 
                 <!-- Product 2 -->
                 <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-200 flex flex-col">
-                    <div class="p-6 bg-brand-dark text-white">
-                        <span class="text-xs font-bold text-brand-gold uppercase tracking-wider">Grade 1 • Wet Polished</span>
+                    <div class="p-6 bg-brand-darkCoffee text-white">
+                        <span class="text-xs font-bold text-brand-gold uppercase tracking-wider" data-i18n="prod_badge_2">Grade 1 • Wet Polished</span>
                         <h3 class="text-xl font-bold font-serif mt-1">Robusta Screen 18 Wet Polished</h3>
                     </div>
                     <div class="p-6 flex-grow space-y-3 text-sm">
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Screen Size:</span> <span class="font-bold">Min 90% over screen 18 (7.1 mm)</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Moisture:</span> <span class="font-bold">Max 12.5%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Foreign Matter:</span> <span class="font-bold">Max 0.1%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Black Beans:</span> <span class="font-bold">Max 0.1%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Broken Beans:</span> <span class="font-bold">Max 0.3%</span></div>
-                        <div class="flex justify-between pt-1"><span class="text-gray-500">Packing:</span> <span class="font-bold">In 60kg Net Single New Jute Bag</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_screen">Screen Size:</span> <span class="font-bold">Min 90% over screen 18 (7.1 mm)</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_moisture">Moisture:</span> <span class="font-bold">Max 12.5%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_foreign">Foreign Matter:</span> <span class="font-bold">Max 0.1%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_black">Black Beans:</span> <span class="font-bold">Max 0.1%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_broken">Broken Beans:</span> <span class="font-bold">Max 0.3%</span></div>
+                        <div class="flex justify-between pt-1"><span class="text-gray-500" data-i18n="spec_packing">Packing:</span> <span class="font-bold" data-i18n="spec_pack_val">In 60kg Net Single New Jute Bag</span></div>
                     </div>
                     <div class="p-4 bg-gray-50 border-t text-center">
-                        <a href="#contact" class="text-brand-amber hover:text-brand-dark font-bold text-sm inline-flex items-center gap-1">Request Quote <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                        <a href="#contact" class="text-brand-amber hover:text-brand-darkCoffee font-bold text-sm inline-flex items-center gap-1"><span data-i18n="btn_quote">Request Quote</span> <i class="fa-solid fa-arrow-right text-xs"></i></a>
                     </div>
                 </div>
 
                 <!-- Product 3 -->
                 <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-200 flex flex-col">
-                    <div class="p-6 bg-brand-dark text-white">
-                        <span class="text-xs font-bold text-brand-gold uppercase tracking-wider">Grade 1 • Cleaned</span>
+                    <div class="p-6 bg-brand-darkCoffee text-white">
+                        <span class="text-xs font-bold text-brand-gold uppercase tracking-wider" data-i18n="prod_badge_1">Grade 1 • Cleaned</span>
                         <h3 class="text-xl font-bold font-serif mt-1">Robusta Screen 16 Cleaned</h3>
                     </div>
                     <div class="p-6 flex-grow space-y-3 text-sm">
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Screen Size:</span> <span class="font-bold">Min 90% over screen 16 (6.30 mm)</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Moisture:</span> <span class="font-bold">Max 12.5%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Foreign Matter:</span> <span class="font-bold">Max 0.1%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Black Beans:</span> <span class="font-bold">Max 0.1%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Broken Beans:</span> <span class="font-bold">Max 0.3%</span></div>
-                        <div class="flex justify-between pt-1"><span class="text-gray-500">Packing:</span> <span class="font-bold">In 60kg Net Single New Jute Bag</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_screen">Screen Size:</span> <span class="font-bold">Min 90% over screen 16 (6.30 mm)</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_moisture">Moisture:</span> <span class="font-bold">Max 12.5%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_foreign">Foreign Matter:</span> <span class="font-bold">Max 0.1%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_black">Black Beans:</span> <span class="font-bold">Max 0.1%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_broken">Broken Beans:</span> <span class="font-bold">Max 0.3%</span></div>
+                        <div class="flex justify-between pt-1"><span class="text-gray-500" data-i18n="spec_packing">Packing:</span> <span class="font-bold" data-i18n="spec_pack_val">In 60kg Net Single New Jute Bag</span></div>
                     </div>
                     <div class="p-4 bg-gray-50 border-t text-center">
-                        <a href="#contact" class="text-brand-amber hover:text-brand-dark font-bold text-sm inline-flex items-center gap-1">Request Quote <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                        <a href="#contact" class="text-brand-amber hover:text-brand-darkCoffee font-bold text-sm inline-flex items-center gap-1"><span data-i18n="btn_quote">Request Quote</span> <i class="fa-solid fa-arrow-right text-xs"></i></a>
                     </div>
                 </div>
 
                 <!-- Product 4 -->
                 <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-200 flex flex-col">
-                    <div class="p-6 bg-brand-dark text-white">
-                        <span class="text-xs font-bold text-brand-gold uppercase tracking-wider">Grade 1 • Wet Polished</span>
+                    <div class="p-6 bg-brand-darkCoffee text-white">
+                        <span class="text-xs font-bold text-brand-gold uppercase tracking-wider" data-i18n="prod_badge_2">Grade 1 • Wet Polished</span>
                         <h3 class="text-xl font-bold font-serif mt-1">Robusta Screen 16 Wet Polished</h3>
                     </div>
                     <div class="p-6 flex-grow space-y-3 text-sm">
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Screen Size:</span> <span class="font-bold">Min 90% over screen 16 (6.30 mm)</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Moisture:</span> <span class="font-bold">Max 12.5%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Foreign Matter:</span> <span class="font-bold">Max 0.1%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Black Beans:</span> <span class="font-bold">Max 0.1%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Broken Beans:</span> <span class="font-bold">Max 0.3%</span></div>
-                        <div class="flex justify-between pt-1"><span class="text-gray-500">Packing:</span> <span class="font-bold">In 60kg Net Single New Jute Bag</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_screen">Screen Size:</span> <span class="font-bold">Min 90% over screen 16 (6.30 mm)</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_moisture">Moisture:</span> <span class="font-bold">Max 12.5%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_foreign">Foreign Matter:</span> <span class="font-bold">Max 0.1%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_black">Black Beans:</span> <span class="font-bold">Max 0.1%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_broken">Broken Beans:</span> <span class="font-bold">Max 0.3%</span></div>
+                        <div class="flex justify-between pt-1"><span class="text-gray-500" data-i18n="spec_packing">Packing:</span> <span class="font-bold" data-i18n="spec_pack_val">In 60kg Net Single New Jute Bag</span></div>
                     </div>
                     <div class="p-4 bg-gray-50 border-t text-center">
-                        <a href="#contact" class="text-brand-amber hover:text-brand-dark font-bold text-sm inline-flex items-center gap-1">Request Quote <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                        <a href="#contact" class="text-brand-amber hover:text-brand-darkCoffee font-bold text-sm inline-flex items-center gap-1"><span data-i18n="btn_quote">Request Quote</span> <i class="fa-solid fa-arrow-right text-xs"></i></a>
                     </div>
                 </div>
 
                 <!-- Product 5 -->
                 <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-200 flex flex-col">
-                    <div class="p-6 bg-brand-dark text-white">
-                        <span class="text-xs font-bold text-brand-gold uppercase tracking-wider">Grade 1 • Standard</span>
+                    <div class="p-6 bg-brand-darkCoffee text-white">
+                        <span class="text-xs font-bold text-brand-gold uppercase tracking-wider" data-i18n="prod_badge_3">Grade 1 • Standard</span>
                         <h3 class="text-xl font-bold font-serif mt-1">Robusta Screen 16 Standard</h3>
                     </div>
                     <div class="p-6 flex-grow space-y-3 text-sm">
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Screen Size:</span> <span class="font-bold">Min 90% over screen 16 (6.30 mm)</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Moisture:</span> <span class="font-bold">Max 12.5%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Foreign Matter:</span> <span class="font-bold">Max 0.5%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Black Beans:</span> <span class="font-bold">Max 2.0%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Broken Beans:</span> <span class="font-bold">Max 2.0%</span></div>
-                        <div class="flex justify-between pt-1"><span class="text-gray-500">Packing:</span> <span class="font-bold">In 60kg Net Single New Jute Bag</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_screen">Screen Size:</span> <span class="font-bold">Min 90% over screen 16 (6.30 mm)</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_moisture">Moisture:</span> <span class="font-bold">Max 12.5%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_foreign">Foreign Matter:</span> <span class="font-bold">Max 0.5%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_black">Black Beans:</span> <span class="font-bold">Max 2.0%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_broken">Broken Beans:</span> <span class="font-bold">Max 2.0%</span></div>
+                        <div class="flex justify-between pt-1"><span class="text-gray-500" data-i18n="spec_packing">Packing:</span> <span class="font-bold" data-i18n="spec_pack_val">In 60kg Net Single New Jute Bag</span></div>
                     </div>
                     <div class="p-4 bg-gray-50 border-t text-center">
-                        <a href="#contact" class="text-brand-amber hover:text-brand-dark font-bold text-sm inline-flex items-center gap-1">Request Quote <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                        <a href="#contact" class="text-brand-amber hover:text-brand-darkCoffee font-bold text-sm inline-flex items-center gap-1"><span data-i18n="btn_quote">Request Quote</span> <i class="fa-solid fa-arrow-right text-xs"></i></a>
                     </div>
                 </div>
 
                 <!-- Product 6 -->
                 <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-200 flex flex-col">
-                    <div class="p-6 bg-brand-dark text-white">
-                        <span class="text-xs font-bold text-brand-gold uppercase tracking-wider">Grade 2 • Standard</span>
+                    <div class="p-6 bg-brand-darkCoffee text-white">
+                        <span class="text-xs font-bold text-brand-gold uppercase tracking-wider" data-i18n="prod_badge_4">Grade 2 • Standard</span>
                         <h3 class="text-xl font-bold font-serif mt-1">Robusta Screen 13 Standard</h3>
                     </div>
                     <div class="p-6 flex-grow space-y-3 text-sm">
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Screen Size:</span> <span class="font-bold">Min 90% over screen 13</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Moisture:</span> <span class="font-bold">Max 13.0%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Foreign Matter:</span> <span class="font-bold">Max 1.0%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Black Beans:</span> <span class="font-bold">Max 5.0%</span></div>
-                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500">Broken Beans:</span> <span class="font-bold">Max 5.0%</span></div>
-                        <div class="flex justify-between pt-1"><span class="text-gray-500">Packing:</span> <span class="font-bold">In 60kg Net Single New Jute Bag</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_screen">Screen Size:</span> <span class="font-bold">Min 90% over screen 13</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_moisture">Moisture:</span> <span class="font-bold">Max 13.0%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_foreign">Foreign Matter:</span> <span class="font-bold">Max 1.0%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_black">Black Beans:</span> <span class="font-bold">Max 5.0%</span></div>
+                        <div class="flex justify-between border-b pb-2"><span class="text-gray-500" data-i18n="spec_broken">Broken Beans:</span> <span class="font-bold">Max 5.0%</span></div>
+                        <div class="flex justify-between pt-1"><span class="text-gray-500" data-i18n="spec_packing">Packing:</span> <span class="font-bold" data-i18n="spec_pack_val">In 60kg Net Single New Jute Bag</span></div>
                     </div>
                     <div class="p-4 bg-gray-50 border-t text-center">
-                        <a href="#contact" class="text-brand-amber hover:text-brand-dark font-bold text-sm inline-flex items-center gap-1">Request Quote <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                        <a href="#contact" class="text-brand-amber hover:text-brand-darkCoffee font-bold text-sm inline-flex items-center gap-1"><span data-i18n="btn_quote">Request Quote</span> <i class="fa-solid fa-arrow-right text-xs"></i></a>
                     </div>
                 </div>
             </div>
@@ -470,9 +487,9 @@
     <section id="shipping" class="py-16 bg-white border-t border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-10">
-                <span class="text-brand-amber text-xs font-bold uppercase tracking-widest">Global Freight Logistics</span>
-                <h2 class="font-serif text-3xl font-bold text-brand-dark mt-1">Partner Ocean Shipping Lines</h2>
-                <p class="text-gray-600 mt-2 text-sm">H-ViETNAM works closely with top ocean carriers to ensure worldwide container shipping schedules.</p>
+                <span class="text-brand-amber text-xs font-bold uppercase tracking-widest" data-i18n="ship_tag">Global Freight Logistics</span>
+                <h2 class="font-serif text-3xl font-bold text-brand-darkCoffee mt-1" data-i18n="ship_title">Partner Ocean Shipping Lines</h2>
+                <p class="text-gray-600 mt-2 text-sm" data-i18n="ship_desc">H-ViETNAM works closely with top ocean carriers to ensure worldwide container shipping schedules.</p>
             </div>
 
             <div class="flex flex-wrap items-center justify-center gap-8 md:gap-14 opacity-80">
@@ -485,17 +502,17 @@
         </div>
     </section>
 
-    <!-- Contact & RFQ Form -->
-    <section id="contact" class="py-20 bg-brand-dark text-white relative">
+    <!-- Contact & RFQ Form (Nền tone màu cà phê đậm) -->
+    <section id="contact" class="py-20 bg-brand-darkCoffee text-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 
                 <!-- Company Contact Info -->
                 <div class="space-y-8">
                     <div>
-                        <span class="text-brand-gold text-xs font-bold uppercase tracking-widest">Contact Information</span>
-                        <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2">Connect with <span class="brand-logo-text"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span></h2>
-                        <p class="text-gray-300 mt-3 text-sm">Send your inquiry directly to our export desk. We reply within 24 business hours.</p>
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-widest" data-i18n="contact_tag">Contact Information</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2"><span data-i18n="contact_title_pre">Connect with</span> <span class="brand-logo-text"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span></h2>
+                        <p class="text-gray-300 mt-3 text-sm" data-i18n="contact_desc">Send your inquiry directly to our export desk. We reply within 24 business hours.</p>
                     </div>
 
                     <div class="space-y-6 text-sm">
@@ -504,8 +521,8 @@
                                 <i class="fa-solid fa-building"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-brand-gold">Company Head Office</h4>
-                                <p class="text-gray-300">Hao Vietnam Coffee Co., Ltd.<br>Plot 40, Lot 7, Duong De Residential Area, Bac Nha Trang Ward, Khanh Hoa Province, Vietnam</p>
+                                <h4 class="font-bold text-brand-gold" data-i18n="addr_head">Company Head Office</h4>
+                                <p class="text-gray-300" data-i18n="addr_head_val">Hao Vietnam Coffee Co., Ltd.<br>Plot 40, Lot 7, Duong De Residential Area, Bac Nha Trang Ward, Khanh Hoa Province, Vietnam</p>
                             </div>
                         </div>
 
@@ -514,8 +531,8 @@
                                 <i class="fa-solid fa-warehouse"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-brand-gold">Procurement & Logistics Centers</h4>
-                                <p class="text-gray-300">Dak Lak Province and Lam Dong Province, Vietnam</p>
+                                <h4 class="font-bold text-brand-gold" data-i18n="addr_ware">Procurement & Logistics Centers</h4>
+                                <p class="text-gray-300" data-i18n="addr_ware_val">Dak Lak Province and Lam Dong Province, Vietnam</p>
                             </div>
                         </div>
 
@@ -524,7 +541,7 @@
                                 <i class="fa-brands fa-whatsapp text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-brand-gold">WhatsApp / Direct Line</h4>
+                                <h4 class="font-bold text-brand-gold" data-i18n="addr_wa">WhatsApp / Direct Line</h4>
                                 <p class="text-gray-300">+84 974 506 990</p>
                             </div>
                         </div>
@@ -534,7 +551,7 @@
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-brand-gold">Email Contact</h4>
+                                <h4 class="font-bold text-brand-gold" data-i18n="addr_email">Email Contact</h4>
                                 <p class="text-gray-300">haovietnamcoffee@gmail.com</p>
                             </div>
                         </div>
@@ -543,26 +560,26 @@
 
                 <!-- RFQ Form -->
                 <div class="bg-brand-brown p-8 rounded-2xl border border-brand-amber/30 shadow-2xl">
-                    <h3 class="text-xl font-bold font-serif text-white mb-6">Request Export Quotation (RFQ)</h3>
+                    <h3 class="text-xl font-bold font-serif text-white mb-6" data-i18n="form_title">Request Export Quotation (RFQ)</h3>
                     <form id="rfqForm" class="space-y-4 text-sm" onsubmit="sendToWhatsApp(event)">
                         <div>
-                            <label class="block text-gray-300 font-semibold mb-1">Company / Importer Name *</label>
-                            <input type="text" id="companyName" required placeholder="e.g. Global Coffee Importers Ltd." class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                            <label class="block text-gray-300 font-semibold mb-1" data-i18n="form_company">Company / Importer Name *</label>
+                            <input type="text" id="companyName" required placeholder="e.g. Global Coffee Importers Ltd." class="w-full bg-brand-darkCoffee border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-gray-300 font-semibold mb-1">Corporate Email *</label>
-                                <input type="email" id="userEmail" required placeholder="name@company.com" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                                <label class="block text-gray-300 font-semibold mb-1" data-i18n="form_email">Corporate Email *</label>
+                                <input type="email" id="userEmail" required placeholder="name@company.com" class="w-full bg-brand-darkCoffee border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                             </div>
                             <div>
-                                <label class="block text-gray-300 font-semibold mb-1">WhatsApp / Phone *</label>
-                                <input type="tel" id="userPhone" required placeholder="+1 234 567 8900" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                                <label class="block text-gray-300 font-semibold mb-1" data-i18n="form_phone">WhatsApp / Phone *</label>
+                                <input type="tel" id="userPhone" required placeholder="+1 234 567 8900" class="w-full bg-brand-darkCoffee border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                             </div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-gray-300 font-semibold mb-1">Required Coffee Grade</label>
-                                <select id="coffeeGrade" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                                <label class="block text-gray-300 font-semibold mb-1" data-i18n="form_grade">Required Coffee Grade</label>
+                                <select id="coffeeGrade" class="w-full bg-brand-darkCoffee border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                                     <option>Robusta Screen 18 Cleaned</option>
                                     <option>Robusta Screen 18 Wet Polished</option>
                                     <option>Robusta Screen 16 Cleaned</option>
@@ -573,16 +590,16 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-gray-300 font-semibold mb-1">Quantity (Containers / Tons)</label>
-                                <input type="text" id="quantity" placeholder="e.g. 20ft FCL (19.2 Tons)" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                                <label class="block text-gray-300 font-semibold mb-1" data-i18n="form_qty">Quantity (Containers / Tons)</label>
+                                <input type="text" id="quantity" placeholder="e.g. 20ft FCL (19.2 Tons)" class="w-full bg-brand-darkCoffee border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-gray-300 font-semibold mb-1">Destination Port & Delivery Terms</label>
-                            <textarea id="destination" rows="3" placeholder="Specify destination port and preferred incoterms (FOB / CIF)..." class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold"></textarea>
+                            <label class="block text-gray-300 font-semibold mb-1" data-i18n="form_dest">Destination Port & Delivery Terms</label>
+                            <textarea id="destination" rows="3" placeholder="Specify destination port and preferred incoterms (FOB / CIF)..." class="w-full bg-brand-darkCoffee border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-gradient-to-r from-brand-amber to-brand-gold text-brand-dark font-bold py-3.5 rounded-lg shadow-lg hover:brightness-110 transition-all uppercase tracking-wider text-sm flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-lg"></i> Submit Inquiry via WhatsApp
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-amber to-brand-gold text-brand-darkCoffee font-bold py-3.5 rounded-lg shadow-lg hover:brightness-110 transition-all uppercase tracking-wider text-sm flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> <span data-i18n="form_submit">Submit Inquiry via WhatsApp</span>
                         </button>
                     </form>
                 </div>
@@ -591,16 +608,16 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-gray-400 text-xs py-8 border-t border-gray-800">
+    <!-- Footer (Nền xanh nước biển đậm thay vì màu đen) -->
+    <footer class="bg-brand-oceanDark text-gray-300 text-xs py-8 border-t border-brand-teal/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div>
+            <div data-i18n="footer_rights">
                 &copy; 2026 Hao Vietnam Coffee Co., Ltd. (<span class="brand-logo-text"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span>). All rights reserved.
             </div>
-            <div class="flex gap-4 text-gray-400">
-                <span>Green Coffee Bean Exporter</span>
+            <div class="flex gap-4 text-gray-300">
+                <span data-i18n="footer_tag1">Green Coffee Bean Exporter</span>
                 <span>•</span>
-                <span>Dak Lak & Lam Dong Origins</span>
+                <span data-i18n="footer_tag2">Dak Lak & Lam Dong Origins</span>
             </div>
         </div>
     </footer>
@@ -609,6 +626,306 @@
     <a href="https://wa.me/84974506990" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-emerald-500 transition-all hover:scale-110" title="Contact H-ViETNAM on WhatsApp">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
+
+    <!-- Multi-language & Carousel Script -->
+    <script>
+        const translations = {
+            en: {
+                pageTitle: "H-ViETNAM - Premium Vietnam Green Coffee Bean Exporter",
+                nav_about: "About H-ViETNAM",
+                nav_specs: "Green Coffee Specs",
+                nav_strengths: "Export Strengths",
+                nav_logistics: "Global Logistics",
+                nav_contact: "Contact Us",
+                btn_rfq: "Request Quote (RFQ)",
+                lang_label: "Language:",
+                hero_tag: "Direct Exporter from Vietnam Origins",
+                hero_title_middle: "Coffee — Reliable Supplier of",
+                hero_title_highlight: "Green Coffee Beans",
+                hero_desc: "Hao Vietnam Coffee Co., Ltd. supplies high-grade Robusta and Arabica green coffee beans directly from procurement hubs in Dak Lak and Lam Dong. We strictly ensure top export grade specs, reliable volume, and competitive global FOB/CIF pricing.",
+                btn_specs: "Explore Specifications",
+                btn_overview: "Company Overview",
+                hl_1_title: "Dak Lak & Lam Dong",
+                hl_1_sub: "Raw Material Procurement Centers",
+                hl_2_title: "Screens 13 to 18",
+                hl_2_sub: "Cleaned & Wet Polished Robusta",
+                hl_3_title: "100% Inspected",
+                hl_3_sub: "Independent Quality Assurance",
+                hl_4_title: "Bulk Capacity",
+                hl_4_sub: "Export Packaging in 60kg Jute Bags",
+                about_tag: "Message from Board of Directors",
+                about_title: "Built on Credibility, Honesty & Long-Term Partnerships",
+                about_p1: "Dear Valued Customers and Partners,<br><br>First of all, <strong>Hao Vietnam Coffee Co., Ltd. (H-Vietnam)</strong> would like to extend our sincere greetings and deepest gratitude for your trust, cooperation, and support.",
+                about_p2: "H-ViETNAM aims to build long-term, sustainable, and mutually beneficial partnerships with international buyers. We view the fulfillment of every order as a noble mission, executed with integrity and honesty, regarding credibility as the true foundation of our cooperation.",
+                about_chk1: "Direct Farm Origin",
+                about_chk2: "Independent Lab Tests",
+                slide_1_tag: "Leadership",
+                slide_1_title: "CEO & Board of Directors",
+                slide_1_desc: "Committed to integrity, transparency, and sustainable global supply.",
+                slide_2_tag: "Quality Assurance",
+                slide_2_title: "On-Site Warehouse & Cargo Inspection",
+                slide_2_desc: "Direct quality checking at origin warehouses in Dak Lak & Lam Dong.",
+                slide_prod_tag: "Export Specification",
+                strengths_tag: "Core Competencies",
+                strengths_title_pre: "Why Partner with",
+                str_1_title: "High-Quality Products",
+                str_1_desc: "Supplying premium Robusta green coffee beans across all screen sizes (13, 14, 16, 18) and Arabica (wet, dry, and honey methods).",
+                str_2_title: "Reasonable Pricing",
+                str_2_desc: "Offering competitive price points suitable for all international market segments, from commercial roasters to specialty importers.",
+                str_3_title: "Independent Inspection",
+                str_3_desc: "Adhering strictly to independent quality inspection protocols to ensure delivered shipments meet committed contract specs.",
+                str_4_title: "Timely Bulk Supply",
+                str_4_desc: "Guaranteeing on-time container delivery schedules and continuous high-volume supply capability throughout the crop season.",
+                str_5_title: "Network of affiliated farming households",
+                str_5_desc: "We collaborate with 10,000 farming households, with an output reaching hundreds of thousands of tons. By choosing us, you can benefit from prices approximately 2% lower than those offered by other Vietnamese companies.",
+                prod_tag: "Products Supplied for Export",
+                prod_title_suf: "Export Specifications",
+                prod_desc: "All products are packed in 60kg net single new jute bags, clean and free from mold, live insects, or foreign odors.",
+                prod_badge_1: "Grade 1 • Cleaned",
+                prod_badge_2: "Grade 1 • Wet Polished",
+                prod_badge_3: "Grade 1 • Standard",
+                prod_badge_4: "Grade 2 • Standard",
+                spec_screen: "Screen Size:",
+                spec_moisture: "Moisture:",
+                spec_foreign: "Foreign Matter:",
+                spec_black: "Black Beans:",
+                spec_broken: "Broken Beans:",
+                spec_packing: "Packing:",
+                spec_pack_val: "In 60kg Net Single New Jute Bag",
+                btn_quote: "Request Quote",
+                ship_tag: "Global Freight Logistics",
+                ship_title: "Partner Ocean Shipping Lines",
+                ship_desc: "H-ViETNAM works closely with top ocean carriers to ensure worldwide container shipping schedules.",
+                contact_tag: "Contact Information",
+                contact_title_pre: "Connect with",
+                contact_desc: "Send your inquiry directly to our export desk. We reply within 24 business hours.",
+                addr_head: "Company Head Office",
+                addr_head_val: "Hao Vietnam Coffee Co., Ltd.<br>Plot 40, Lot 7, Duong De Residential Area, Bac Nha Trang Ward, Khanh Hoa Province, Vietnam",
+                addr_ware: "Procurement & Logistics Centers",
+                addr_ware_val: "Dak Lak Province and Lam Dong Province, Vietnam",
+                addr_wa: "WhatsApp / Direct Line",
+                addr_email: "Email Contact",
+                form_title: "Request Export Quotation (RFQ)",
+                form_company: "Company / Importer Name *",
+                form_email: "Corporate Email *",
+                form_phone: "WhatsApp / Phone *",
+                form_grade: "Required Coffee Grade",
+                form_qty: "Quantity (Containers / Tons)",
+                form_dest: "Destination Port & Delivery Terms",
+                form_submit: "Submit Inquiry via WhatsApp",
+                footer_rights: "© 2026 Hao Vietnam Coffee Co., Ltd. All rights reserved.",
+                footer_tag1: "Green Coffee Bean Exporter",
+                footer_tag2: "Dak Lak & Lam Dong Origins"
+            },
+            fr: {
+                pageTitle: "H-ViETNAM - Exportateur de Grains de Café Vert Premium du Vietnam",
+                nav_about: "À propos de H-ViETNAM",
+                nav_specs: "Spécifications du Café",
+                nav_strengths: "Atouts à l'Exportation",
+                nav_logistics: "Logistique Mondiale",
+                nav_contact: "Contactez-nous",
+                btn_rfq: "Demande de Devis (RFQ)",
+                lang_label: "Langue:",
+                hero_tag: "Exportateur Direct des Origines du Vietnam",
+                hero_title_middle: "Café — Fournisseur Fiable de",
+                hero_title_highlight: "Grains de Café Vert",
+                hero_desc: "Hao Vietnam Coffee Co., Ltd. fournit des grains de café vert Robusta et Arabica de haute qualité directement depuis les centres d'approvisionnement de Dak Lak et Lam Dong. Nous garantissons strictement les normes de qualité à l'exportation, un volume fiable et des prix FOB/CIF mondiaux compétitifs.",
+                btn_specs: "Explorer les Spécifications",
+                btn_overview: "Présentation de l'Entreprise",
+                hl_1_title: "Dak Lak & Lam Dong",
+                hl_1_sub: "Centres d'Approvisionnement en Matières Premières",
+                hl_2_title: "Tamis 13 à 18",
+                hl_2_sub: "Robusta Nettoyé & Poli par Voie Humide",
+                hl_3_title: "100% Inspecté",
+                hl_3_sub: "Assurance Qualité Indépendante",
+                hl_4_title: "Capacité en Vrac",
+                hl_4_sub: "Emballage d'Exportation en Sacs de Jute de 60 kg",
+                about_tag: "Message du Conseil d'Administration",
+                about_title: "Fondé sur la Crédibilité, l'Honnêteté et les Partenariats à Long Terme",
+                about_p1: "Chers Clients et Partenaires,<br><br>Tout d'abord, <strong>Hao Vietnam Coffee Co., Ltd. (H-Vietnam)</strong> tient à vous adresser ses sincères salutations et sa plus profonde gratitude pour votre confiance, votre coopération et votre soutien.",
+                about_p2: "H-ViETNAM vise à établir des partenariats à long terme, durables et mutuellement bénéfiques avec les acheteurs internationaux. Nous considérons l'exécution de chaque commande comme une mission noble, exécutée avec intégrité et honnêteté, considérant la crédibilité comme le véritable fondement de notre coopération.",
+                about_chk1: "Origine Directe de la Ferme",
+                about_chk2: "Tests de Laboratoire Indépendants",
+                slide_1_tag: "Direction",
+                slide_1_title: "PDG et Conseil d'Administration",
+                slide_1_desc: "Engagés envers l'intégrité, la transparence et l'approvisionnement mondial durable.",
+                slide_2_tag: "Assurance Qualité",
+                slide_2_title: "Inspection des Entrepôts et des Cargaisons sur Site",
+                slide_2_desc: "Contrôle direct de la qualité dans les entrepôts d'origine à Dak Lak et Lam Dong.",
+                slide_prod_tag: "Spécification d'Exportation",
+                strengths_tag: "Compétences Clés",
+                strengths_title_pre: "Pourquoi s'associer avec",
+                str_1_title: "Produits de Haute Qualité",
+                str_1_desc: "Fourniture de grains de café vert Robusta de qualité supérieure dans toutes les tailles de tamis (13, 14, 16, 18) et Arabica (méthodes lavée, naturelle et honey).",
+                str_2_title: "Prix Raisonnables",
+                str_2_desc: "Offrant des prix compétitifs adaptés à tous les segments du marché international, des torréfacteurs commerciaux aux importateurs spécialisés.",
+                str_3_title: "Inspection Indépendante",
+                str_3_desc: "Respect strict des protocoles d'inspection de qualité indépendants pour garantir que les expéditions répondent aux spécifications du contrat.",
+                str_4_title: "Approvisionnement en Vrac Ponctuel",
+                str_4_desc: "Garantie de calendriers de livraison de conteneurs ponctuels et d'une capacité d'approvisionnement continue à grand volume tout au long de la saison.",
+                str_5_title: "Réseau de ménages agricoles affiliés",
+                str_5_desc: "Nous collaborons avec 10 000 ménages agricoles, avec une production atteignant des centaines de milliers de tonnes. En nous choisissant, vous bénéficiez de prix inférieurs d'environ 2% à ceux d'autres sociétés vietnamiennes.",
+                prod_tag: "Produits Fournis pour l'Exportation",
+                prod_title_suf: "Spécifications d'Exportation",
+                prod_desc: "Tous les produits sont emballés dans des sacs de jute neufs simples de 60 kg net, propres et exempts de moisissures, d'insectes vivants ou d'odeurs étrangères.",
+                prod_badge_1: "Grade 1 • Nettoyé",
+                prod_badge_2: "Grade 1 • Poli par Voie Humide",
+                prod_badge_3: "Grade 1 • Standard",
+                prod_badge_4: "Grade 2 • Standard",
+                spec_screen: "Taille du Tamis:",
+                spec_moisture: "Humidité:",
+                spec_foreign: "Matières Étrangères:",
+                spec_black: "Grains Noirs:",
+                spec_broken: "Grains Cassés:",
+                spec_packing: "Emballage:",
+                spec_pack_val: "En sac de jute neuf simple de 60 kg net",
+                btn_quote: "Demander un Devis",
+                ship_tag: "Logistique de Fret Mondial",
+                ship_title: "Compagnies Maritimes Partenaires",
+                ship_desc: "H-ViETNAM travaille en étroite collaboration avec les principaux armateurs pour assurer des calendriers d'expédition de conteneurs dans le monde entier.",
+                contact_tag: "Informations de Contact",
+                contact_title_pre: "Connectez-vous avec",
+                contact_desc: "Envoyez votre demande directement à notre bureau des exportations. Nous répondons dans les 24 heures ouvrables.",
+                addr_head: "Siège Social de l'Entreprise",
+                addr_head_val: "Hao Vietnam Coffee Co., Ltd.<br>Parcelle 40, Lot 7, Zone Résidentielle Duong De, Quartier Bac Nha Trang, Province de Khanh Hoa, Vietnam",
+                addr_ware: "Centres d'Approvisionnement et de Logistique",
+                addr_ware_val: "Province de Dak Lak et Province de Lâm Đồng, Vietnam",
+                addr_wa: "WhatsApp / Ligne Directe",
+                addr_email: "Contact Email",
+                form_title: "Demande de Devis d'Exportation (RFQ)",
+                form_company: "Nom de l'Entreprise / Importateur *",
+                form_email: "Email Professionnel *",
+                form_phone: "WhatsApp / Téléphone *",
+                form_grade: "Grade de Café Requis",
+                form_qty: "Quantité (Conteneurs / Tonnes)",
+                form_dest: "Port de Destination et Conditions de Livraison",
+                form_submit: "Soumettre la Demande via WhatsApp",
+                footer_rights: "© 2026 Hao Vietnam Coffee Co., Ltd. Tous droits réservés.",
+                footer_tag1: "Exportateur de Grains de Café Vert",
+                footer_tag2: "Origines Dak Lak & Lam Dong"
+            },
+            ar: {
+                pageTitle: "H-ViETNAM - مصدّر حبوب القهوة الخضراء الفاخرة من فيتنام",
+                nav_about: "عن الشركة",
+                nav_specs: "مواصفات القهوة",
+                nav_strengths: "مزايا التصدير",
+                nav_logistics: "الخدمات اللوجستية",
+                nav_contact: "اتصل بنا",
+                btn_rfq: "طلب عرض سعر (RFQ)",
+                lang_label: "اللغة:",
+                hero_tag: "مصدّر مباشر من المناشير الفيتنامية",
+                hero_title_middle: "قهوة — المورد الموثوق لـ",
+                hero_title_highlight: "حبوب القهوة الخضراء",
+                hero_desc: "شركة هاو فيتنام للقهوة المحدودة تورد حبوب القهوة الخضراء روبوستا وأرابيكا عالية الجودة مباشرة من مراكز التوريد في داك لاك ولام دونغ. نحن نضمن بدقة مواصفات الدرجة التصديرية العالية، الحجم الموثوق، والأسعار التنافسية العالمية FOB/CIF.",
+                btn_specs: "استكشف المواصفات",
+                btn_overview: "نظرة عامة على الشركة",
+                hl_1_title: "داك لاك و لام دونغ",
+                hl_1_sub: "مراكز توريد المواد الخام",
+                hl_2_title: "الشاشات 13 إلى 18",
+                hl_2_sub: "روبوستا منظفة ومصقولة بالرطب",
+                hl_3_title: "مفحوصة 100%",
+                hl_3_sub: "ضمان الجودة المستقل",
+                hl_4_title: "سعة ضخمة",
+                hl_4_sub: "تعبئة تصديرية في أكياس خيش 60 كجم",
+                about_tag: "رسالة مجلس الإدارة",
+                about_title: "مبني على المصداقية والنزاهة والشراكات طويلة الأجل",
+                about_p1: "العملاء والشركاء الأعزاء،<br><br>أولاً وقبل كل شيء، تود <strong>شركة هاو فيتنام للقهوة المحدودة (H-Vietnam)</strong> أن تتقدم بخالص التحيات وعميق الشكر على ثقتكم وتعاونكم ودعمكم.",
+                about_p2: "تهدف H-ViETNAM إلى بناء شراكات طويلة الأجل ومستدامة ومتبادلة المنفع مع المشترين الدوليين. نحن ننظر إلى تنفيذ كل طلب بمثابة مهمة نبيلة تُنفذ بنزاهة وأمانة، معتبرين المصداقية الأساس الحقيقي لتعاوننا.",
+                about_chk1: "منشأ المزرعة المباشر",
+                about_chk2: "اختبارات المعامل المستقلة",
+                slide_1_tag: "القيادة",
+                slide_1_title: "الرئيس التنفيذي ومجلس الإدارة",
+                slide_1_desc: "ملتزمون بالنزاهة والشفافية والتوريد العالمي المستدام.",
+                slide_2_tag: "ضمان الجودة",
+                slide_2_title: "التفتيش الموقع على المستودعات والشحنات",
+                slide_2_desc: "فحص مباشر للجودة في مستودعات المنشأ في داك لاك ولام دونغ.",
+                slide_prod_tag: "مواصفات التصدير",
+                strengths_tag: "الكفاءات الأساسية",
+                strengths_title_pre: "لماذا تشارك مع",
+                str_1_title: "منتجات عالية الجودة",
+                str_1_desc: "توريد حبوب القهوة الخضراء روبوستا الفاخرة عبر جميع أحجام الشاشات (13، 14، 16، 18) وأرابيكا ( بالطرق الرطبة، الجافة، والعسلية).",
+                str_2_title: "أسعار معقولة",
+                str_2_desc: "تقديم نقاط أسعار تنافسية مناسبة لجميع قطاعات السوق الدولية، من المحامص التجارية إلى المستوردين المتخصصين.",
+                str_3_title: "فحص مستقل",
+                str_3_desc: "الالتزام التام بروتوكولات فحص الجودة المستقلة لضمان استيفاء الشحنات المسلمة لمواصفات العقد المتفق عليها.",
+                str_4_title: "توريد بالجملة في الوقت المناسب",
+                str_4_desc: "ضمان جداول تسليم الحاويات في الوقت المحدد والقدرة المستمرة على التوريد بكميات كبيرة طوال موسم الحصاد.",
+                str_5_title: "شبكة من الأسر الزراعية التابعة",
+                str_5_desc: "نتعاون مع 10,000 أسرة زراعية، بإنتاج يصل إلى مئات الآلاف من الأطنان. باختيارنا، يمكنك الاستفادة من أسعار أقل بنوالي 2% مقارنة بالشركات الفيتنامية الأخرى.",
+                prod_tag: "المنتجات المقدمة للتصدير",
+                prod_title_suf: "مواصفات التصدير",
+                prod_desc: "جميع المنتجات معبأة في أكياس خيش جديدة فردية صافي 60 كجم، نظيفة وخالية من العفن أو الحشرات الحية أو الروائح الغريبة.",
+                prod_badge_1: "الدرجة 1 • منظفة",
+                prod_badge_2: "الدرجة 1 • مصقولة بالرطب",
+                prod_badge_3: "الدرجة 1 • قياسية",
+                prod_badge_4: "الدرجة 2 • قياسية",
+                spec_screen: "حجم الشاشة:",
+                spec_moisture: "الرطوبة:",
+                spec_foreign: "مواد غريبة:",
+                spec_black: "حبوب سوداء:",
+                spec_broken: "حبوب مكسورة:",
+                spec_packing: "التعبئة:",
+                spec_pack_val: "في كيس خيش جديد مفرد صافي 60 كجم",
+                btn_quote: "طلب عرض سعر",
+                ship_tag: "لوجستيات الشحن العالمي",
+                ship_title: "خطوط الشحن البحري الشريكة",
+                ship_desc: "تعمل H-ViETNAM عن كثب مع كبرى شركات الشحن البحري لضمان جداول شحن الحاويات في جميع أنحاء العالم.",
+                contact_tag: "معلومات الاتصال",
+                contact_title_pre: "تواصل مع",
+                contact_desc: "أرسل استفسارك مباشرة إلى مكتب التصدير الخاص بنا. نرد خلال 24 ساعة عمل.",
+                addr_head: "المكتب الرئيسي للشركة",
+                addr_head_val: "شركة هاو فيتنام للقهوة المحدودة<br>قطعة 40، الدفعة 7، منطقة دونج دي السكنية، حي باك نها ترانج، مقاطعة خانه هوا، فيتنام",
+                addr_ware: "مراكز التوريد والخدمات اللوجستية",
+                addr_ware_val: "مقاطعة داك لاك ومقاطعة لام دونغ، فيتنام",
+                addr_wa: "واتساب / الخط المباشر",
+                addr_email: "البريد الإلكتروني",
+                form_title: "طلب عرض أسعار التصدير (RFQ)",
+                form_company: "اسم الشركة / المستورد *",
+                form_email: "البريد الإلكتروني للشركة *",
+                form_phone: "واتساب / الهاتف *",
+                form_grade: "درجة القهوة المطلوبة",
+                form_qty: "الكمية (حاويات / أطنان)",
+                form_dest: "ميناء الوصول وشروط التسليم",
+                form_submit: "إرسال الاستفسار عبر واتساب",
+                footer_rights: "© 2026 شركة هاو فيتنام للقهوة المحدودة. جميع الحقوق محفوظة.",
+                footer_tag1: "مصدّر حبوب القهوة الخضراء",
+                footer_tag2: "مناشير داك لاك و لام دونغ"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const htmlRoot = document.getElementById('htmlRoot');
+            if (lang === 'ar') {
+                htmlRoot.setAttribute('dir', 'rtl');
+                htmlRoot.setAttribute('lang', 'ar');
+            } else {
+                htmlRoot.setAttribute('dir', 'ltr');
+                htmlRoot.setAttribute('lang', lang);
+            }
+
+            document.getElementById('langSelect').value = lang;
+            document.getElementById('langSelectMobile').value = lang;
+
+            if (translations[lang].pageTitle) {
+                document.getElementById('pageTitle').innerText = translations[lang].pageTitle;
+            }
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            localStorage.setItem('preferred_lang', lang);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred_lang') || 'en';
+            changeLanguage(savedLang);
+        });
+    </script>
 
     <!-- Carousel & Form Handling Script -->
     <script>
@@ -649,10 +966,8 @@
             }, 4000);
         }
 
-        // Start Auto Play on load
         resetAutoSlide();
 
-        // Send Form Data to WhatsApp
         function sendToWhatsApp(event) {
             event.preventDefault();
 
