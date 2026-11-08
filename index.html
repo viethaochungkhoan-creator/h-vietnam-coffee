@@ -64,19 +64,20 @@
 
     <!-- Top Navigation Header -->
     <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md text-white border-b border-brand-amber/20 shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+        <div class="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 px-4 sm:px-0">
                 
-                <!-- Ocean Blue Brand Logo Rectangle -->
-                <a href="#" class="flex items-center bg-brand-teal px-4 py-2 rounded-xl border border-teal-500/30 shadow-lg hover:brightness-110 transition-all duration-300">
+                <!-- Ocean Blue Brand Logo Rectangle (Tràn viền ngang trên mobile, bo góc trên desktop) -->
+                <a href="#" class="flex items-center bg-brand-teal px-4 sm:px-4 py-2 w-full sm:w-auto rounded-none sm:rounded-xl border-y sm:border border-teal-500/30 shadow-lg hover:brightness-110 transition-all duration-300 -mx-4 sm:mx-0">
                     <div class="flex items-center gap-3">
-                        <!-- Star Coffee Logo Icon -->
-                        <div class="flex items-center justify-center w-9 h-9">
-                            <svg class="w-8 h-8 text-brand-gold" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2l2.4 6.6H21l-5.4 4.2 2 6.6-5.6-4.2-5.6 4.2 2-6.6L3 8.6h6.6z" opacity="0.4"/>
-                                <path d="M12 4.5l1.6 4.4H18l-3.6 2.8 1.4 4.4-3.8-2.8-3.8 2.8 1.4-4.4-3.6-2.8h4.4z"/>
-                                <circle cx="12" cy="11.5" r="3.5" fill="#3B2314" stroke="#D4AF37" stroke-width="1.2"/>
-                                <path d="M11 9.5c1.5-.5 2.5.5 2 2s-2.5 1.5-2 2" fill="none" stroke="#D4AF37" stroke-width="1.2" stroke-linecap="round"/>
+                        <!-- Star & Coffee Bean Logo Icon with Reversed S-Curve (Left to Right) -->
+                        <div class="flex items-center justify-center w-10 h-10 flex-shrink-0">
+                            <svg class="w-10 h-10 drop-shadow-md" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Star Shape with Gold Border and Brown Fill -->
+                                <path d="M50 4L62.8 33.2L94.5 35.8L70 56.8L77.8 88L50 71.5L22.2 88L30 56.8L5.5 35.8L37.2 33.2L50 4Z" fill="#3B2314" stroke="#D4AF37" stroke-width="4.5" stroke-linejoin="round"/>
+                                <!-- Vertical Oval Coffee Bean with Inverted S-Curve (Starts top-left, curves down to bottom-right) -->
+                                <ellipse cx="50" cy="49" rx="13" ry="17" stroke="white" stroke-width="3.5" fill="none"/>
+                                <path d="M44 34C55 42 45 56 56 64" stroke="white" stroke-width="3.2" stroke-linecap="round"/>
                             </svg>
                         </div>
                         <!-- Company Name with H-V Highlight -->
@@ -117,7 +118,7 @@
                 </div>
                 
                 <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                    <span class="inline-flex items-baseline"><span class="text-5xl sm:text-6xl lg:text-7xl font-black">H-V</span><span class="text-3xl sm:text-4xl lg:text-5xl font-bold lowercase">ietnam</span></span> Coffee — Reliable Supplier of <span class="text-brand-gold italic">Green Coffee Beans</span>
+                    <span class="inline-flex items-baseline"><span class="text-5xl sm:text-6xl lg:text-7xl font-black">H-V</span><span class="text-3xl sm:text-4xl lg:text-5xl font-bold lowercase">ietnam</span></span> Coffee — Reliable Supplier of <span class="text-brand-gold not-italic">Green Coffee Beans</span>
                 </h1>
                 
                 <p class="text-gray-300 text-lg leading-relaxed mb-8">
@@ -303,7 +304,7 @@
                 <h2 class="font-serif text-3xl font-bold mt-2">Why Partner with <span class="brand-logo-text"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span>?</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-brand-dark p-6 rounded-xl border border-brand-amber/30 space-y-3">
                     <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center font-bold text-lg">1</div>
                     <h3 class="font-bold text-lg text-white">High-Quality Products</h3>
@@ -326,6 +327,12 @@
                     <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center font-bold text-lg">4</div>
                     <h3 class="font-bold text-lg text-white">Timely Bulk Supply</h3>
                     <p class="text-xs text-gray-300 leading-relaxed">Guaranteeing on-time container delivery schedules and continuous high-volume supply capability throughout the crop season.</p>
+                </div>
+
+                <div class="bg-brand-dark p-6 rounded-xl border border-brand-amber/30 space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center font-bold text-lg">5</div>
+                    <h3 class="font-bold text-lg text-white">Network of affiliated farming households</h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">We collaborate with 10,000 farming households, with an output reaching hundreds of thousands of tons. By choosing us, you can benefit from prices approximately 2% lower than those offered by other Vietnamese companies.</p>
                 </div>
             </div>
         </div>
@@ -537,25 +544,25 @@
                 <!-- RFQ Form -->
                 <div class="bg-brand-brown p-8 rounded-2xl border border-brand-amber/30 shadow-2xl">
                     <h3 class="text-xl font-bold font-serif text-white mb-6">Request Export Quotation (RFQ)</h3>
-                    <form class="space-y-4 text-sm" onsubmit="alert('Thank you! Your quotation request has been received by H-ViETNAM export team.'); return false;">
+                    <form id="rfqForm" class="space-y-4 text-sm" onsubmit="sendToWhatsApp(event)">
                         <div>
                             <label class="block text-gray-300 font-semibold mb-1">Company / Importer Name *</label>
-                            <input type="text" required placeholder="e.g. Global Coffee Importers Ltd." class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                            <input type="text" id="companyName" required placeholder="e.g. Global Coffee Importers Ltd." class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-gray-300 font-semibold mb-1">Corporate Email *</label>
-                                <input type="email" required placeholder="name@company.com" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                                <input type="email" id="userEmail" required placeholder="name@company.com" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                             </div>
                             <div>
                                 <label class="block text-gray-300 font-semibold mb-1">WhatsApp / Phone *</label>
-                                <input type="tel" required placeholder="+1 234 567 8900" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                                <input type="tel" id="userPhone" required placeholder="+1 234 567 8900" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                             </div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-gray-300 font-semibold mb-1">Required Coffee Grade</label>
-                                <select class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                                <select id="coffeeGrade" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                                     <option>Robusta Screen 18 Cleaned</option>
                                     <option>Robusta Screen 18 Wet Polished</option>
                                     <option>Robusta Screen 16 Cleaned</option>
@@ -567,15 +574,15 @@
                             </div>
                             <div>
                                 <label class="block text-gray-300 font-semibold mb-1">Quantity (Containers / Tons)</label>
-                                <input type="text" placeholder="e.g. 20ft FCL (19.2 Tons)" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                                <input type="text" id="quantity" placeholder="e.g. 20ft FCL (19.2 Tons)" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                             </div>
                         </div>
                         <div>
                             <label class="block text-gray-300 font-semibold mb-1">Destination Port & Delivery Terms</label>
-                            <textarea rows="3" placeholder="Specify destination port and preferred incoterms (FOB / CIF)..." class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold"></textarea>
+                            <textarea id="destination" rows="3" placeholder="Specify destination port and preferred incoterms (FOB / CIF)..." class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-gradient-to-r from-brand-amber to-brand-gold text-brand-dark font-bold py-3.5 rounded-lg shadow-lg hover:brightness-110 transition-all uppercase tracking-wider text-sm">
-                            Submit Inquiry
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-amber to-brand-gold text-brand-dark font-bold py-3.5 rounded-lg shadow-lg hover:brightness-110 transition-all uppercase tracking-wider text-sm flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Submit Inquiry via WhatsApp
                         </button>
                     </form>
                 </div>
@@ -603,7 +610,7 @@
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- Carousel Script -->
+    <!-- Carousel & Form Handling Script -->
     <script>
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.carousel-slide');
@@ -644,6 +651,33 @@
 
         // Start Auto Play on load
         resetAutoSlide();
+
+        // Send Form Data to WhatsApp
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+
+            const companyName = document.getElementById('companyName').value;
+            const userEmail = document.getElementById('userEmail').value;
+            const userPhone = document.getElementById('userPhone').value;
+            const coffeeGrade = document.getElementById('coffeeGrade').value;
+            const quantity = document.getElementById('quantity').value || 'N/A';
+            const destination = document.getElementById('destination').value || 'N/A';
+
+            const whatsappNumber = '84974506990';
+
+            const message = `*NEW EXPORT INQUIRY - H-ViETNAM COFFEE*\n\n` +
+                `🏢 *Company:* ${companyName}\n` +
+                `📧 *Email:* ${userEmail}\n` +
+                `📞 *Phone/WhatsApp:* ${userPhone}\n` +
+                `☕ *Required Grade:* ${coffeeGrade}\n` +
+                `📦 *Quantity:* ${quantity}\n` +
+                `📍 *Destination & Terms:* ${destination}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            window.open(whatsappUrl, '_blank');
+        }
     </script>
 
 </body>
