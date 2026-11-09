@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">H-ViETNAM - Premium Vietnam Green Coffee Bean Exporter</title>
+    <title id="pageTitle">H-Vietnam - Premium Vietnam Green Coffee Bean Exporter</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
@@ -16,13 +16,13 @@
                 extend: {
                     colors: {
                         brand: {
-                            darkCoffee: '#231712', /* Tone cà phê đậm thay cho màu đen */
+                            darkCoffee: '#231712', /* Tone cà phê đậm */
                             brown: '#3B2314',      /* Tone cà phê nguyên bản */
                             lightCoffee: '#4E3120',/* Tone cà phê sáng */
                             amber: '#8B5A2B',
                             gold: '#D4AF37',
                             cream: '#FDFBF7',
-                            teal: '#124B63',       /* Màu xanh nước biển thương hiệu */
+                            teal: '#124B63',       /* Màu xanh nước biển */
                             oceanDark: '#0D3647',  /* Xanh nước biển đậm */
                         }
                     },
@@ -47,11 +47,18 @@
             font-weight: 900;
             letter-spacing: -0.02em;
         }
+        /* Thu ngắn thanh ngang gạch nối giữa H và Vietnam */
+        .brand-logo-text .hv-dash {
+            font-size: 1.1em;
+            font-weight: 800;
+            margin: 0 -1px;
+            display: inline-block;
+            transform: scaleX(0.65);
+        }
         .brand-logo-text .ietnam-small {
-            font-size: 0.9em;
-            font-weight: 700;
-            text-transform: lowercase;
-            letter-spacing: 0.02em;
+            font-size: 1.1em;
+            font-weight: 800;
+            letter-spacing: 0.01em;
         }
         .carousel-slide {
             display: none;
@@ -64,12 +71,12 @@
 </head>
 <body class="bg-brand-cream text-gray-800 font-sans antialiased selection:bg-brand-gold selection:text-white">
 
-    <!-- Top Navigation Header (Nền xanh nước biển đậm sang trọng) -->
+    <!-- Top Navigation Header -->
     <header class="sticky top-0 z-50 bg-brand-oceanDark/95 backdrop-blur-md text-white border-b border-brand-teal/40 shadow-xl">
         <div class="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 
-                <!-- Ocean Blue Brand Logo Rectangle (Tràn viền 100% chiều ngang trên mobile)[cite: 1, 2, 3] -->
+                <!-- Ocean Blue Brand Logo Rectangle (Tràn viền 100% chiều ngang trên mobile)[cite: 5, 6] -->
                 <a href="#" class="flex items-center bg-brand-teal px-4 sm:px-4 py-3 sm:py-2 w-full sm:w-auto rounded-none sm:rounded-xl border-y sm:border border-teal-400/30 shadow-lg hover:brightness-110 transition-all duration-300">
                     <div class="flex items-center gap-3 w-full sm:w-auto">
                         <!-- Star & Coffee Bean Logo Icon -->
@@ -80,10 +87,10 @@
                                 <path d="M44 34C55 42 45 56 56 64" stroke="white" stroke-width="3.2" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <!-- Company Name with H-V Highlight -->
+                        <!-- Company Name with shortened hyphen logo -->
                         <div class="flex flex-col">
                             <span class="brand-logo-text text-xl text-white tracking-wide">
-                                <span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span>
+                                <span class="hv-large">H</span><span class="hv-dash">-</span><span class="ietnam-small">Vietnam</span>
                             </span>
                             <span class="text-[9px] uppercase tracking-widest text-brand-gold font-semibold">HAO VIETNAM COFFEE CO., LTD</span>
                         </div>
@@ -92,7 +99,7 @@
 
                 <!-- Navigation Links -->
                 <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-                    <a href="#about" class="hover:text-brand-gold transition-colors" data-i18n="nav_about">About H-ViETNAM</a>
+                    <a href="#about" class="hover:text-brand-gold transition-colors" data-i18n="nav_about">About H-Vietnam</a>
                     <a href="#products" class="hover:text-brand-gold transition-colors" data-i18n="nav_specs">Green Coffee Specs</a>
                     <a href="#strengths" class="hover:text-brand-gold transition-colors" data-i18n="nav_strengths">Export Strengths</a>
                     <a href="#shipping" class="hover:text-brand-gold transition-colors" data-i18n="nav_logistics">Global Logistics</a>
@@ -101,11 +108,12 @@
 
                 <!-- Language Switcher & RFQ Button -->
                 <div class="hidden lg:flex items-center gap-4">
-                    <!-- Language Dropdown -->
                     <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-brand-brown text-brand-gold border border-brand-amber/40 rounded-lg px-3 py-1.5 text-xs font-bold focus:outline-none focus:border-brand-gold cursor-pointer">
                         <option value="en">English (EN)</option>
                         <option value="fr">Français (FR)</option>
                         <option value="ar">العربية (AR)</option>
+                        <option value="ru">Русский (RU)</option>
+                        <option value="zh">中文 (ZH)</option>
                     </select>
 
                     <a href="#contact" class="bg-gradient-to-r from-brand-amber to-brand-gold text-brand-darkCoffee font-bold px-5 py-2.5 rounded-lg shadow-md hover:brightness-110 transition-all flex items-center gap-2">
@@ -123,10 +131,12 @@
             <option value="en">English (EN)</option>
             <option value="fr">Français (FR)</option>
             <option value="ar">العربية (AR)</option>
+            <option value="ru">Русский (RU)</option>
+            <option value="zh">中文 (ZH)</option>
         </select>
     </div>
 
-    <!-- Hero Section (Nền màu cà phê đậm sang trọng) -->
+    <!-- Hero Section -->
     <section class="relative bg-brand-darkCoffee text-white overflow-hidden py-24 lg:py-32 border-b border-brand-amber/20">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl">
@@ -135,7 +145,7 @@
                 </div>
                 
                 <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                    <span class="inline-flex items-baseline"><span class="text-5xl sm:text-6xl lg:text-7xl font-black">H-V</span><span class="text-3xl sm:text-4xl lg:text-5xl font-bold lowercase">ietnam</span></span> <span data-i18n="hero_title_middle">Coffee — Reliable Supplier of</span> <span class="text-brand-gold not-italic" data-i18n="hero_title_highlight">Green Coffee Beans</span>
+                    <span class="inline-flex items-baseline"><span class="text-5xl sm:text-6xl lg:text-7xl font-black">H</span><span class="text-4xl sm:text-5xl lg:text-6xl font-bold">-</span><span class="text-3xl sm:text-4xl lg:text-5xl font-bold">Vietnam</span></span> <span data-i18n="hero_title_middle">Coffee — Reliable Supplier of</span> <span class="text-brand-gold not-italic" data-i18n="hero_title_highlight">Green Coffee Beans</span>
                 </h1>
                 
                 <p class="text-gray-300 text-lg leading-relaxed mb-8" data-i18n="hero_desc">
@@ -153,7 +163,7 @@
         </div>
     </section>
 
-    <!-- Key Highlights Bar (Nền màu cà phê) -->
+    <!-- Key Highlights Bar -->
     <section class="bg-brand-brown text-white py-8 border-b border-brand-amber/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -188,10 +198,10 @@
                     <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-darkCoffee" data-i18n="about_title">Built on Credibility, Honesty & Long-Term Partnerships</h2>
                     <p class="text-gray-600 leading-relaxed" data-i18n="about_p1">
                         Dear Valued Customers and Partners,<br><br>
-                        First of all, <strong>Hao Vietnam Coffee Co., Ltd. (<span class="brand-logo-text text-brand-darkCoffee"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span>)</strong> would like to extend our sincere greetings and deepest gratitude for your trust, cooperation, and support.
+                        First of all, <strong>Hao Vietnam Coffee Co., Ltd. (<span class="brand-logo-text text-brand-darkCoffee"><span class="hv-large">H</span><span class="hv-dash">-</span><span class="ietnam-small">Vietnam</span></span>)</strong> would like to extend our sincere greetings and deepest gratitude for your trust, cooperation, and support.
                     </p>
                     <p class="text-gray-600 leading-relaxed" data-i18n="about_p2">
-                        H-ViETNAM aims to build long-term, sustainable, and mutually beneficial partnerships with international buyers. We view the fulfillment of every order as a noble mission, executed with integrity and honesty, regarding credibility as the true foundation of our cooperation.
+                        H-Vietnam aims to build long-term, sustainable, and mutually beneficial partnerships with international buyers. We view the fulfillment of every order as a noble mission, executed with integrity and honesty, regarding credibility as the true foundation of our cooperation.
                     </p>
 
                     <div class="pt-2 flex items-center gap-4 text-xs font-semibold text-gray-500">
@@ -200,14 +210,14 @@
                     </div>
                 </div>
 
-                <!-- Interactive Image Slider (Nền khung ảnh tone cà phê) -->
+                <!-- Interactive Image Slider -->
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-brand-darkCoffee group">
                     
                     <div class="relative h-[480px] w-full">
                         
                         <!-- Slide 1: CEO Portrait -->
                         <div class="carousel-slide active h-full w-full">
-                            <img src="Anh_Chan_Dung_CEO-.jpg" alt="CEO of H-ViETNAM Coffee" class="w-full h-full object-cover">
+                            <img src="Anh_Chan_Dung_CEO-.jpg" alt="CEO of H-Vietnam Coffee" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 text-white">
                                 <span class="text-brand-gold text-xs font-bold uppercase tracking-wider" data-i18n="slide_1_tag">Leadership</span>
                                 <h4 class="text-lg font-bold" data-i18n="slide_1_title">CEO & Board of Directors</h4>
@@ -217,7 +227,7 @@
 
                         <!-- Slide 2: CEO Warehouse Operations -->
                         <div class="carousel-slide h-full w-full">
-                            <img src="Anh_CEO_Kiem-Tra_Ca_Phe--.jpg" alt="H-ViETNAM Operations" class="w-full h-full object-cover">
+                            <img src="Anh_CEO_Kiem-Tra_Ca_Phe--.jpg" alt="H-Vietnam Operations" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 text-white">
                                 <span class="text-brand-gold text-xs font-bold uppercase tracking-wider" data-i18n="slide_2_tag">Quality Assurance</span>
                                 <h4 class="text-lg font-bold" data-i18n="slide_2_title">On-Site Warehouse & Cargo Inspection</h4>
@@ -313,12 +323,12 @@
         </div>
     </section>
 
-    <!-- Export Strengths Section (Nền màu cà phê) -->
+    <!-- Export Strengths Section -->
     <section id="strengths" class="py-16 bg-brand-brown text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-12">
                 <span class="text-brand-gold text-xs font-bold uppercase tracking-widest" data-i18n="strengths_tag">Core Competencies</span>
-                <h2 class="font-serif text-3xl font-bold mt-2"><span data-i18n="strengths_title_pre">Why Partner with</span> <span class="brand-logo-text"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span>?</h2>
+                <h2 class="font-serif text-3xl font-bold mt-2"><span data-i18n="strengths_title_pre">Why Partner with</span> <span class="brand-logo-text"><span class="hv-large">H</span><span class="hv-dash">-</span><span class="ietnam-small">Vietnam</span></span>?</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -360,7 +370,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-brand-amber text-xs font-bold uppercase tracking-widest" data-i18n="prod_tag">Products Supplied for Export</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-darkCoffee mt-2"><span class="brand-logo-text"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span> <span data-i18n="prod_title_suf">Export Specifications</span></h2>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-darkCoffee mt-2"><span class="brand-logo-text"><span class="hv-large">H</span><span class="hv-dash">-</span><span class="ietnam-small">Vietnam</span></span> <span data-i18n="prod_title_suf">Export Specifications</span></h2>
                 <p class="text-gray-600 mt-3 text-sm" data-i18n="prod_desc">All products are packed in 60kg net single new jute bags, clean and free from mold, live insects, or foreign odors.</p>
             </div>
 
@@ -489,7 +499,7 @@
             <div class="text-center max-w-2xl mx-auto mb-10">
                 <span class="text-brand-amber text-xs font-bold uppercase tracking-widest" data-i18n="ship_tag">Global Freight Logistics</span>
                 <h2 class="font-serif text-3xl font-bold text-brand-darkCoffee mt-1" data-i18n="ship_title">Partner Ocean Shipping Lines</h2>
-                <p class="text-gray-600 mt-2 text-sm" data-i18n="ship_desc">H-ViETNAM works closely with top ocean carriers to ensure worldwide container shipping schedules.</p>
+                <p class="text-gray-600 mt-2 text-sm" data-i18n="ship_desc">H-Vietnam works closely with top ocean carriers to ensure worldwide container shipping schedules.</p>
             </div>
 
             <div class="flex flex-wrap items-center justify-center gap-8 md:gap-14 opacity-80">
@@ -502,7 +512,7 @@
         </div>
     </section>
 
-    <!-- Contact & RFQ Form (Nền tone màu cà phê đậm) -->
+    <!-- Contact & RFQ Form -->
     <section id="contact" class="py-20 bg-brand-darkCoffee text-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -511,7 +521,7 @@
                 <div class="space-y-8">
                     <div>
                         <span class="text-brand-gold text-xs font-bold uppercase tracking-widest" data-i18n="contact_tag">Contact Information</span>
-                        <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2"><span data-i18n="contact_title_pre">Connect with</span> <span class="brand-logo-text"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span></h2>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2"><span data-i18n="contact_title_pre">Connect with</span> <span class="brand-logo-text"><span class="hv-large">H</span><span class="hv-dash">-</span><span class="ietnam-small">Vietnam</span></span></h2>
                         <p class="text-gray-300 mt-3 text-sm" data-i18n="contact_desc">Send your inquiry directly to our export desk. We reply within 24 business hours.</p>
                     </div>
 
@@ -608,11 +618,11 @@
         </div>
     </section>
 
-    <!-- Footer (Nền xanh nước biển đậm thay vì màu đen) -->
+    <!-- Footer -->
     <footer class="bg-brand-oceanDark text-gray-300 text-xs py-8 border-t border-brand-teal/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div data-i18n="footer_rights">
-                &copy; 2026 Hao Vietnam Coffee Co., Ltd. (<span class="brand-logo-text"><span class="hv-large">H-V</span><span class="ietnam-small">ietnam</span></span>). All rights reserved.
+                &copy; 2026 Hao Vietnam Coffee Co., Ltd. (<span class="brand-logo-text"><span class="hv-large">H</span><span class="hv-dash">-</span><span class="ietnam-small">Vietnam</span></span>). All rights reserved.
             </div>
             <div class="flex gap-4 text-gray-300">
                 <span data-i18n="footer_tag1">Green Coffee Bean Exporter</span>
@@ -623,7 +633,7 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/84974506990" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-emerald-500 transition-all hover:scale-110" title="Contact H-ViETNAM on WhatsApp">
+    <a href="https://wa.me/84974506990" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-emerald-500 transition-all hover:scale-110" title="Contact H-Vietnam on WhatsApp">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
@@ -631,8 +641,8 @@
     <script>
         const translations = {
             en: {
-                pageTitle: "H-ViETNAM - Premium Vietnam Green Coffee Bean Exporter",
-                nav_about: "About H-ViETNAM",
+                pageTitle: "H-Vietnam - Premium Vietnam Green Coffee Bean Exporter",
+                nav_about: "About H-Vietnam",
                 nav_specs: "Green Coffee Specs",
                 nav_strengths: "Export Strengths",
                 nav_logistics: "Global Logistics",
@@ -656,7 +666,7 @@
                 about_tag: "Message from Board of Directors",
                 about_title: "Built on Credibility, Honesty & Long-Term Partnerships",
                 about_p1: "Dear Valued Customers and Partners,<br><br>First of all, <strong>Hao Vietnam Coffee Co., Ltd. (H-Vietnam)</strong> would like to extend our sincere greetings and deepest gratitude for your trust, cooperation, and support.",
-                about_p2: "H-ViETNAM aims to build long-term, sustainable, and mutually beneficial partnerships with international buyers. We view the fulfillment of every order as a noble mission, executed with integrity and honesty, regarding credibility as the true foundation of our cooperation.",
+                about_p2: "H-Vietnam aims to build long-term, sustainable, and mutually beneficial partnerships with international buyers. We view the fulfillment of every order as a noble mission, executed with integrity and honesty, regarding credibility as the true foundation of our cooperation.",
                 about_chk1: "Direct Farm Origin",
                 about_chk2: "Independent Lab Tests",
                 slide_1_tag: "Leadership",
@@ -695,7 +705,7 @@
                 btn_quote: "Request Quote",
                 ship_tag: "Global Freight Logistics",
                 ship_title: "Partner Ocean Shipping Lines",
-                ship_desc: "H-ViETNAM works closely with top ocean carriers to ensure worldwide container shipping schedules.",
+                ship_desc: "H-Vietnam works closely with top ocean carriers to ensure worldwide container shipping schedules.",
                 contact_tag: "Contact Information",
                 contact_title_pre: "Connect with",
                 contact_desc: "Send your inquiry directly to our export desk. We reply within 24 business hours.",
@@ -718,8 +728,8 @@
                 footer_tag2: "Dak Lak & Lam Dong Origins"
             },
             fr: {
-                pageTitle: "H-ViETNAM - Exportateur de Grains de Café Vert Premium du Vietnam",
-                nav_about: "À propos de H-ViETNAM",
+                pageTitle: "H-Vietnam - Exportateur de Grains de Café Vert Premium du Vietnam",
+                nav_about: "À propos de H-Vietnam",
                 nav_specs: "Spécifications du Café",
                 nav_strengths: "Atouts à l'Exportation",
                 nav_logistics: "Logistique Mondiale",
@@ -743,7 +753,7 @@
                 about_tag: "Message du Conseil d'Administration",
                 about_title: "Fondé sur la Crédibilité, l'Honnêteté et les Partenariats à Long Terme",
                 about_p1: "Chers Clients et Partenaires,<br><br>Tout d'abord, <strong>Hao Vietnam Coffee Co., Ltd. (H-Vietnam)</strong> tient à vous adresser ses sincères salutations et sa plus profonde gratitude pour votre confiance, votre coopération et votre soutien.",
-                about_p2: "H-ViETNAM vise à établir des partenariats à long terme, durables et mutuellement bénéfiques avec les acheteurs internationaux. Nous considérons l'exécution de chaque commande comme une mission noble, exécutée avec intégrité et honnêteté, considérant la crédibilité comme le véritable fondement de notre coopération.",
+                about_p2: "H-Vietnam vise à établir des partenariats à long terme, durables et mutuellement bénéfiques avec les acheteurs internationaux. Nous considérons l'exécution de chaque commande comme une mission noble, exécutée avec intégrité et honnêteté, considérant la crédibilité comme le véritable fondement de notre coopération.",
                 about_chk1: "Origine Directe de la Ferme",
                 about_chk2: "Tests de Laboratoire Indépendants",
                 slide_1_tag: "Direction",
@@ -782,7 +792,7 @@
                 btn_quote: "Demander un Devis",
                 ship_tag: "Logistique de Fret Mondial",
                 ship_title: "Compagnies Maritimes Partenaires",
-                ship_desc: "H-ViETNAM travaille en étroite collaboration avec les principaux armateurs pour assurer des calendriers d'expédition de conteneurs dans le monde entier.",
+                ship_desc: "H-Vietnam travaille en étroite collaboration avec les principaux armateurs pour assurer des calendriers d'expédition de conteneurs dans le monde entier.",
                 contact_tag: "Informations de Contact",
                 contact_title_pre: "Connectez-vous avec",
                 contact_desc: "Envoyez votre demande directement à notre bureau des exportations. Nous répondons dans les 24 heures ouvrables.",
@@ -805,7 +815,7 @@
                 footer_tag2: "Origines Dak Lak & Lam Dong"
             },
             ar: {
-                pageTitle: "H-ViETNAM - مصدّر حبوب القهوة الخضراء الفاخرة من فيتنام",
+                pageTitle: "H-Vietnam - مصدّر حبوب القهوة الخضراء الفاخرة من فيتنام",
                 nav_about: "عن الشركة",
                 nav_specs: "مواصفات القهوة",
                 nav_strengths: "مزايا التصدير",
@@ -830,7 +840,7 @@
                 about_tag: "رسالة مجلس الإدارة",
                 about_title: "مبني على المصداقية والنزاهة والشراكات طويلة الأجل",
                 about_p1: "العملاء والشركاء الأعزاء،<br><br>أولاً وقبل كل شيء، تود <strong>شركة هاو فيتنام للقهوة المحدودة (H-Vietnam)</strong> أن تتقدم بخالص التحيات وعميق الشكر على ثقتكم وتعاونكم ودعمكم.",
-                about_p2: "تهدف H-ViETNAM إلى بناء شراكات طويلة الأجل ومستدامة ومتبادلة المنفع مع المشترين الدوليين. نحن ننظر إلى تنفيذ كل طلب بمثابة مهمة نبيلة تُنفذ بنزاهة وأمانة، معتبرين المصداقية الأساس الحقيقي لتعاوننا.",
+                about_p2: "تهدف H-Vietnam إلى بناء شراكات طويلة الأجل ومستدامة ومتبادلة المنفع مع المشترين الدوليين. نحن ننظر إلى تنفيذ كل طلب بمثابة مهمة نبيلة تُنفذ بنزاهة وأمانة، معتبرين المصداقية الأساس الحقيقي لتعاوننا.",
                 about_chk1: "منشأ المزرعة المباشر",
                 about_chk2: "اختبارات المعامل المستقلة",
                 slide_1_tag: "القيادة",
@@ -869,7 +879,7 @@
                 btn_quote: "طلب عرض سعر",
                 ship_tag: "لوجستيات الشحن العالمي",
                 ship_title: "خطوط الشحن البحري الشريكة",
-                ship_desc: "تعمل H-ViETNAM عن كثب مع كبرى شركات الشحن البحري لضمان جداول شحن الحاويات في جميع أنحاء العالم.",
+                ship_desc: "تعمل H-Vietnam عن كثب مع كبرى شركات الشحن البحري لضمان جداول شحن الحاويات في جميع أنحاء العالم.",
                 contact_tag: "معلومات الاتصال",
                 contact_title_pre: "تواصل مع",
                 contact_desc: "أرسل استفسارك مباشرة إلى مكتب التصدير الخاص بنا. نرد خلال 24 ساعة عمل.",
@@ -890,6 +900,180 @@
                 footer_rights: "© 2026 شركة هاو فيتنام للقهوة المحدودة. جميع الحقوق محفوظة.",
                 footer_tag1: "مصدّر حبوب القهوة الخضراء",
                 footer_tag2: "مناشير داك لاك و لام دونغ"
+            },
+            ru: {
+                pageTitle: "H-Vietnam - Премиальный экспорттер зеленых кофейных зерен из Вьетнама",
+                nav_about: "О компании H-Vietnam",
+                nav_specs: "Характеристики кофе",
+                nav_strengths: "Преимущества экспорта",
+                nav_logistics: "Мировая логистика",
+                nav_contact: "Контакты",
+                btn_rfq: "Запросить цену (RFQ)",
+                lang_label: "Язык:",
+                hero_tag: "Прямой экспортер из регионов Вьетнама",
+                hero_title_middle: "Кофе — Надежный поставщик",
+                hero_title_highlight: "Зеленых кофейных зерен",
+                hero_desc: "ООО «Hao Vietnam Coffee» поставляет высококачественные зеленые кофейные зерна Робуста и Арабика напрямую из центров закупки в Даклаке и Ламдонге. Мы строго обеспечиваем высшие экспортные стандарты, надежные объемы и конкурентоспособные мировые цены FOB/CIF.",
+                btn_specs: "Изучить спецификации",
+                btn_overview: "О компании",
+                hl_1_title: "Даклак и Ламдонг",
+                hl_1_sub: "Центры закупки сырья",
+                hl_2_title: "Сита 13 – 18",
+                hl_2_sub: "Очищенная и мытая полированная робуста",
+                hl_3_title: "100% Инспекция",
+                hl_3_sub: "Независимый контроль качества",
+                hl_4_title: "Оптовые поставки",
+                hl_4_sub: "Экспортная упаковка в джутовых мешках по 60 кг",
+                about_tag: "Обращение Совета директоров",
+                about_title: "Построено на надежности, честности и долгосрочных партнерских отношениях",
+                about_p1: "Уважаемые клиенты и партнеры!<br><br>Прежде всего, <strong>ООО «Hao Vietnam Coffee» (H-Vietnam)</strong> выражает вам искреннюю признательность и глубокую благодарность за ваше доверие, сотрудничество и поддержку.",
+                about_p2: "H-Vietnam стремится строить долгосрочные, устойчивые и взаимовыгодные партнерские отношения с международными покупателями. Мы рассматриваем выполнение каждого заказа как благородную миссию, выполняемую с честностью и порядочностью.",
+                about_chk1: "Прямое происхождение с ферм",
+                about_chk2: "Независимые лабораторные тесты",
+                slide_1_tag: "Руководство",
+                slide_1_title: "Генеральный директор и Совет директоров",
+                slide_1_desc: "Приверженность честности, прозрачности и устойчивым глобальным поставкам.",
+                slide_2_tag: "Контроль качества",
+                slide_2_title: "Инспекция складов и грузов на месте",
+                slide_2_desc: "Прямая проверка качества на складах происхождения в Даклаке и Ламдонге.",
+                slide_prod_tag: "Экспортная спецификация",
+                strengths_tag: "Основные компетенции",
+                strengths_title_pre: "Почему стоит сотрудничать с",
+                str_1_title: "Высококачественная продукция",
+                str_1_desc: "Поставка премиальных зеленых зерен робусты всех размеров сит (13, 14, 16, 18) и арабики (мытая, сухая и хани обработка).",
+                str_2_title: "Разумные цены",
+                str_2_desc: "Предложение конкурентоспособных цен, подходящих для всех сегментов международного рынка, от коммерческих обжарщиков до специализированных импортеров.",
+                str_3_title: "Независимая инспекция",
+                str_3_desc: "Строгое соблюдение протоколов независимой инспекции качества для гарантии соответствия поставок контрактным спецификациям.",
+                str_4_title: "Своевременные оптовые поставки",
+                str_4_desc: "Гарантия соблюдения графиков доставки контейнеров и постоянная способность к крупнотоннажным поставкам в течение всего сезона.",
+                str_5_title: "Сеть аффилированных фермерских хозяйств",
+                str_5_desc: "Мы сотрудничаем с 10 000 фермерских хозяйств с объемом производства в сотни тысяч тонн. Сотрудничая с нами, вы получаете цены примерно на 2% ниже, чем у других компаний.",
+                prod_tag: "Продукция для экспорта",
+                prod_title_suf: "Экспортные спецификации",
+                prod_desc: "Вся продукция упакована в новые чистые джутовые мешки весом нетто 60 кг, без плесени, живых насекомых и посторонних запахов.",
+                prod_badge_1: "Класс 1 • Очищенный",
+                prod_badge_2: "Класс 1 • Мытый полированный",
+                prod_badge_3: "Класс 1 • Стандартный",
+                prod_badge_4: "Класс 2 • Стандартный",
+                spec_screen: "Размер сита:",
+                spec_moisture: "Влажность:",
+                spec_foreign: "Примеси:",
+                spec_black: "Черные зерна:",
+                spec_broken: "Битые зерна:",
+                spec_packing: "Упаковка:",
+                spec_pack_val: "В новом джутовом мешке весом 60 кг",
+                btn_quote: "Запросить цену",
+                ship_tag: "Глобальная логистика",
+                ship_title: "Морские судоходные линии-партнеры",
+                ship_desc: "H-Vietnam тесно сотрудничает с ведущими морскими перевозчиками для обеспечения надежных графиков контейнерных перевозок по всему миру.",
+                contact_tag: "Контактная информация",
+                contact_title_pre: "Связаться с",
+                contact_desc: "Отправьте ваш запрос напрямую в наш экспортный отдел. Мы ответим в течение 24 рабочих часов.",
+                addr_head: "Главный офис компании",
+                addr_head_val: "Hao Vietnam Coffee Co., Ltd.<br>Участок 40, Лот 7, Жилой район Дуонг Де, Район Бак Нячанг, Провинция Кханьхоа, Вьетнам",
+                addr_ware: "Центры закупки и логистики",
+                addr_ware_val: "Провинция Даклак и Провинция Ламдонг, Вьетнам",
+                addr_wa: "WhatsApp / Прямая линия",
+                addr_email: "Email для связи",
+                form_title: "Запрос экспортного коммерческого предложения (RFQ)",
+                form_company: "Название компании / Импортер *",
+                form_email: "Корпоративный Email *",
+                form_phone: "WhatsApp / Телефон *",
+                form_grade: "Требуемый сорт кофе",
+                form_qty: "Количество (Контейнеры / Тонны)",
+                form_dest: "Порт назначения и условия поставки",
+                form_submit: "Отправить запрос через WhatsApp",
+                footer_rights: "© 2026 Hao Vietnam Coffee Co., Ltd. Все права защищены.",
+                footer_tag1: "Экспортер зеленых кофейных зерен",
+                footer_tag2: "Происхождение: Даклак и Ламдонг"
+            },
+            zh: {
+                pageTitle: "H-Vietnam - 越南优质生咖啡豆出口商",
+                nav_about: "关于 H-Vietnam",
+                nav_specs: "生咖啡豆规格",
+                nav_strengths: "出口优势",
+                nav_logistics: "全球物流",
+                nav_contact: "联系我们",
+                btn_rfq: "索取报价 (RFQ)",
+                lang_label: "语言:",
+                hero_tag: "越南产地直供出口商",
+                hero_title_middle: "咖啡 — 可靠的供应商",
+                hero_title_highlight: "优质生咖啡豆",
+                hero_desc: "越南豪越咖啡有限公司直接从多乐省（Dak Lak）和林同省（Lam Dong）的采购中心供应高品质罗布斯塔和阿拉比卡生咖啡豆。我们严格确保一流的出口级规格、可靠的供货量以及具竞争力的全球 FOB/CIF 价格。",
+                btn_specs: "浏览规格参数",
+                btn_overview: "公司概况",
+                hl_1_title: "多乐省 & 林同省",
+                hl_1_sub: "优质原材料采购中心",
+                hl_2_title: "13至18目筛网",
+                hl_2_sub: "精选清洗及水洗抛光罗布斯塔",
+                hl_3_title: "100% 检验",
+                hl_3_sub: "独立质量保证",
+                hl_4_title: "大宗供应能力",
+                hl_4_sub: "60公斤麻袋出口包装",
+                about_tag: "董事会致辞",
+                about_title: "以信誉、诚实和长期伙伴关系为基础",
+                about_p1: "尊敬的客户与合作伙伴：<br><br>首先，<strong>越南豪越咖啡有限公司 (H-Vietnam)</strong> 谨向您致以诚挚的问候，并对您的信任、合作与支持表示最深切的谢意。",
+                about_p2: "H-Vietnam 旨在与国际买家建立长期、可持续和互利共赢的合作关系。我们视每一份订单的履行为崇高的使命，以诚实守信为合作的真正基石。",
+                about_chk1: "农场直接产地",
+                about_chk2: "独立实验室检测",
+                slide_1_tag: "领导团队",
+                slide_1_title: "首席执行官及董事会",
+                slide_1_desc: "致力于诚信、透明和可持续的全球供应链。",
+                slide_2_tag: "质量保证",
+                slide_2_title: "产地仓库与货物现场检验",
+                slide_2_desc: "在多乐省和林同省的产地仓库进行直接质量检查。",
+                slide_prod_tag: "出口规格",
+                strengths_tag: "核心竞争力",
+                strengths_title_pre: "为什么选择与",
+                str_1_title: "高质量产品",
+                str_1_desc: "供应涵盖所有筛网尺寸（13、14、16、18）的优质罗布斯塔生豆以及阿拉比卡豆（水洗、日晒和蜜处理）。",
+                str_2_title: "合理的价格",
+                str_2_desc: "提供适合所有国际市场细分（从商业烘焙商到专业进口商）的极具竞争力的价格。",
+                str_3_title: "独立检验",
+                str_3_desc: "严格遵守独立质量检验协议，确保交付的货物完全符合约定的合同规格。",
+                str_4_title: "准时大宗供应",
+                str_4_desc: "在整个产季中保证准时的集装箱交付计划和持续的大容量供货能力。",
+                str_5_title: "加盟农户网络",
+                str_5_desc: "我们与1,0000户农户合作，年产量达数十万吨。选择我们，您可以享受比其他越南公司低约2%的价格优势。",
+                prod_tag: "出口产品供应",
+                prod_title_suf: "出口规格",
+                prod_desc: "所有产品均采用60公斤净重全新单层麻袋包装，清洁、无霉变、无活虫或异味。",
+                prod_badge_1: "一级 • 精选清洗",
+                prod_badge_2: "一级 • 水洗抛光",
+                prod_badge_3: "一级 • 标准",
+                prod_badge_4: "二级 • 标准",
+                spec_screen: "筛网尺寸:",
+                spec_moisture: "水分:",
+                spec_foreign: "杂质:",
+                spec_black: "黑豆:",
+                spec_broken: "破损豆:",
+                spec_packing: "包装:",
+                spec_pack_val: "60公斤净重全新麻袋",
+                btn_quote: "索取报价",
+                ship_tag: "全球货运物流",
+                ship_title: "合作船公司",
+                ship_desc: "H-Vietnam 与各大远洋承运商紧密合作，确保全球集装箱航运班期的稳定可靠。",
+                contact_tag: "联系信息",
+                contact_title_pre: "与",
+                contact_desc: "直接将您的询盘发送至我们的出口部。我们将在24个工作小时内回复。",
+                addr_head: "公司总部",
+                addr_head_val: "越南豪越咖啡有限公司<br>越南庆和省芽庄市北芽庄坊阳底住宅区7号地块40号",
+                addr_ware: "采购与物流中心",
+                addr_ware_val: "越南多乐省和林同省",
+                addr_wa: "WhatsApp / 直线电话",
+                addr_email: "电子邮箱",
+                form_title: "索取出口报价单 (RFQ)",
+                form_company: "公司名称 / 进口商名称 *",
+                form_email: "企业电子邮箱 *",
+                form_phone: "WhatsApp / 电话 *",
+                form_grade: "所需咖啡等级",
+                form_qty: "数量 (集装箱 / 吨)",
+                form_dest: "目的港及交付条款",
+                form_submit: "通过 WhatsApp 提交询盘",
+                footer_rights: "© 2026 越南豪越咖啡有限公司。保留所有权利。",
+                footer_tag1: "生咖啡豆出口商",
+                footer_tag2: "多乐省及林同省原产地"
             }
         };
 
@@ -980,7 +1164,7 @@
 
             const whatsappNumber = '84974506990';
 
-            const message = `*NEW EXPORT INQUIRY - H-ViETNAM COFFEE*\n\n` +
+            const message = `*NEW EXPORT INQUIRY - H-Vietnam COFFEE*\n\n` +
                 `🏢 *Company:* ${companyName}\n` +
                 `📧 *Email:* ${userEmail}\n` +
                 `📞 *Phone/WhatsApp:* ${userPhone}\n` +
