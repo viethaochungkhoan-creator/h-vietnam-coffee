@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" id="htmlRoot">
-    <head>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Thẻ xác minh Google Search Console của anh -->
+  <!-- Thẻ xác minh Google Search Console -->
   <meta name="google-site-verification" content="Mh41G2_Cww_OW9chzZrKPkzEj8w2HM1OSDFn8T0" />
 
   <!-- Tiêu đề trang tối ưu từ khóa SEO quốc tế -->
- <title>H-Vietnam Coffee - Premium Vietnam Green Coffee Bean Exporter (Robusta & Arabica)</title>
+  <title id="pageTitle">H-Vietnam Coffee - Premium Vietnam Green Coffee Bean Exporter (Robusta & Arabica)</title>
 
   <!-- Thẻ mô tả hiển thị trên kết quả tìm kiếm Google -->
   <meta name="description" content="Hao Vietnam Coffee Co., Ltd is a trusted exporter of high-grade Robusta and Arabica green coffee beans from Dak Lak and Lam Dong, shipping directly via Cat Lai Port, Ho Chi Minh City, Vietnam.">
@@ -16,63 +16,64 @@
   <!-- Từ khóa bổ sung cho Google -->
   <meta name="keywords" content="Vietnam green coffee bean exporter, Robusta screen 18 wet polished, Arabica coffee supplier Vietnam, Cat Lai Port coffee exporter, bulk coffee beans FOB CIF">
 
-  <!-- Tailwind CSS & Font Awesome (Nếu trang của anh đang dùng) -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            darkCoffee: '#231712', /* Tone cà phê đậm */
-                            brown: '#3B2314',      /* Tone cà phê nguyên bản */
-                            lightCoffee: '#4E3120',/* Tone cà phê sáng */
-                            amber: '#8B5A2B',
-                            gold: '#D4AF37',
-                            cream: '#FDFBF7',
-                            teal: '#124B63',       /* Màu xanh nước biển */
-                            oceanDark: '#0D3647',  /* Xanh nước biển đậm */
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        .brand-logo-text {
-            display: inline-flex;
-            align-items: baseline;
-            font-weight: 800;
-            line-height: 1;
-        }
-        .brand-logo-text .hv-large {
-            font-size: 1.35em;
-            font-weight: 900;
-            letter-spacing: -0.02em;
-        }
-        .brand-logo-text .ietnam-small {
-            font-size: 0.675em;
-            font-weight: 800;
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-        }
-        .carousel-slide {
-            display: none;
-            transition: opacity 0.4s ease-in-out;
-        }
-        .carousel-slide.active {
-            display: block;
-        }
-    </style>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      brand: {
+                          darkCoffee: '#231712', /* Tone cà phê đậm */
+                          brown: '#3B2314',      /* Tone cà phê nguyên bản */
+                          lightCoffee: '#4E3120',/* Tone cà phê sáng */
+                          amber: '#8B5A2B',
+                          gold: '#D4AF37',
+                          cream: '#FDFBF7',
+                          teal: '#124B63',       /* Màu xanh nước biển */
+                          oceanDark: '#0D3647',  /* Xanh nước biển đậm */
+                      }
+                  },
+                  fontFamily: {
+                      sans: ['Plus Jakarta Sans', 'sans-serif'],
+                      serif: ['Playfair Display', 'serif'],
+                  }
+              }
+          }
+      }
+  </script>
+  <style>
+      html { scroll-behavior: smooth; }
+      .brand-logo-text {
+          display: inline-flex;
+          align-items: baseline;
+          font-weight: 800;
+          line-height: 1;
+      }
+      .brand-logo-text .hv-large {
+          font-size: 1.35em;
+          font-weight: 900;
+          letter-spacing: -0.02em;
+      }
+      .brand-logo-text .ietnam-small {
+          font-size: 0.675em;
+          font-weight: 800;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+      }
+      .carousel-slide {
+          display: none;
+          transition: opacity 0.4s ease-in-out;
+      }
+      .carousel-slide.active {
+          display: block;
+      }
+  </style>
 </head>
 <body class="bg-brand-cream text-gray-800 font-sans antialiased selection:bg-brand-gold selection:text-white">
 
@@ -141,48 +142,37 @@
         </select>
     </div>
 
-    <!-- Hero Section -->
-    <section class="relative bg-brand-darkCoffee text-white overflow-hidden py-24 lg:py-32 border-b border-brand-amber/20">
+    <!-- Hero Section (Cleaned & Optimized) -->
+    <section class="relative bg-brand-darkCoffee text-white overflow-hidden py-20 lg:py-28 border-b border-brand-amber/20">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Export Tag -->
                 <div class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6 text-brand-gold text-xs uppercase tracking-widest font-semibold">
-                    <i class="fa-solid fa-globe"></i> <span data-i18n="hero_tag">Direct Exporter from Vietnam Origins</span>
+                    <i class="fa-solid fa-globe"></i> <span data-i18n="hero_tag">DIRECT EXPORTER FROM VIETNAM ORIGINS | CAT LAI PORT, HO CHI MINH CITY</span>
                 </div>
                 
-                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                    <span class="brand-logo-text"><span class="hv-large text-5xl sm:text-6xl lg:text-7xl">H-V</span><span class="ietnam-small text-2xl sm:text-3xl lg:text-4xl">IETNAM</span></span> <span data-i18n="hero_title_middle">Coffee — Reliable Supplier of</span> <span class="text-brand-gold not-italic" data-i18n="hero_title_highlight">Green Coffee Beans</span>
+                <!-- Main H1 Title -->
+                <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    <span class="brand-logo-text"><span class="hv-large text-4xl sm:text-6xl lg:text-7xl">H-V</span><span class="ietnam-small text-xl sm:text-3xl lg:text-4xl">IETNAM</span></span> <span data-i18n="hero_title_middle">Coffee — Reliable Supplier of</span> <span class="text-brand-gold not-italic" data-i18n="hero_title_highlight">Green Coffee Beans</span>
                 </h1>
                 
-                <p class="text-gray-300 text-lg leading-relaxed mb-8" data-i18n="hero_desc">
-           <!-- Main Banner / Intro Section -->
-<section class="intro-section py-12 px-4 bg-dark">
-  <div class="container mx-auto max-w-4xl text-center">
-    <!-- Thẻ nhãn định vị xuất khẩu -->
-    <span class="inline-block px-4 py-1 text-xs font-semibold uppercase tracking-wider text-amber-400 bg-amber-900/30 rounded-full mb-4">
-      DIRECT EXPORTER FROM VIETNAM ORIGINS | CAT LAI PORT, HO CHI MINH CITY
-    </span>
-
-    <!-- Tiêu đề H1 chuẩn SEO -->
-    <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">
-      H-Vietnam Coffee — Reliable Supplier of Green Coffee Beans
-    </h1>
-
-    <!-- Đoạn văn bản chứa từ khóa cảng Cát Lái & vùng nguyên liệu -->
-    <p class="text-base md:text-lg text-gray-300 leading-relaxed mb-6">
-      <strong>Hao Vietnam Coffee Co., Ltd.</strong> supplies high-grade Robusta and Arabica green coffee beans directly from key procurement hubs in Dak Lak and Lam Dong. We guarantee strict export specs, reliable monthly volume, and competitive global FOB/CIF pricing.
-    </p>
-
-    <p class="text-base md:text-lg text-gray-300 leading-relaxed mb-8">
-      All shipments are professionally processed, quality-inspected, and loaded for global delivery directly from <strong>Cat Lai Port, Ho Chi Minh City, Vietnam</strong>.
-    </p>
-
+                <!-- Paragraph 1 -->
+                <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-4 max-w-3xl mx-auto" data-i18n="hero_desc_1">
+                    <strong>Hao Vietnam Coffee Co., Ltd.</strong> supplies high-grade Robusta and Arabica green coffee beans directly from key procurement hubs in Dak Lak and Lam Dong. We guarantee strict export specs, reliable monthly volume, and competitive global FOB/CIF pricing.
                 </p>
-                <div class="flex flex-wrap items-center gap-4">
+
+                <!-- Paragraph 2 (Cat Lai Port inclusion) -->
+                <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-8 max-w-3xl mx-auto" data-i18n="hero_desc_2">
+                    All shipments are professionally processed, quality-inspected, and loaded for global delivery directly from <strong>Cat Lai Port, Ho Chi Minh City, Vietnam</strong>.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap justify-center items-center gap-4">
                     <a href="#products" class="bg-brand-gold text-brand-darkCoffee font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-yellow-400 transition-all" data-i18n="btn_specs">
                         Explore Specifications
                     </a>
-                    <a href="#about" class="border border-white/30 hover:border-brand-gold text-white hover:text-brand-gold px-8 py-4 rounded-xl font-semibold transition-all" data-i18n="btn_overview">
-                        Company Overview
+                    <a href="#contact" class="border border-brand-gold/40 text-brand-gold hover:bg-brand-gold hover:text-brand-darkCoffee px-8 py-4 rounded-xl font-semibold transition-all" data-i18n="btn_rfq">
+                        Request Quote
                     </a>
                 </div>
             </div>
@@ -667,7 +657,7 @@
     <script>
         const translations = {
             en: {
-                pageTitle: "H-VIETNAM - Premium Vietnam Green Coffee Bean Exporter",
+                pageTitle: "H-Vietnam Coffee - Premium Vietnam Green Coffee Bean Exporter (Robusta & Arabica)",
                 nav_about: "About H-VIETNAM",
                 nav_specs: "Green Coffee Specs",
                 nav_strengths: "Export Strengths",
@@ -675,10 +665,11 @@
                 nav_contact: "Contact Us",
                 btn_rfq: "Request Quote (RFQ)",
                 lang_label: "Language:",
-                hero_tag: "Direct Exporter from Vietnam Origins",
+                hero_tag: "DIRECT EXPORTER FROM VIETNAM ORIGINS | CAT LAI PORT, HO CHI MINH CITY",
                 hero_title_middle: "Coffee — Reliable Supplier of",
                 hero_title_highlight: "Green Coffee Beans",
-                hero_desc: "Hao Vietnam Coffee Co., Ltd. supplies high-grade Robusta and Arabica green coffee beans directly from procurement hubs in Dak Lak and Lam Dong. We strictly ensure top export grade specs, reliable volume, and competitive global FOB/CIF pricing.",
+                hero_desc_1: "<strong>Hao Vietnam Coffee Co., Ltd.</strong> supplies high-grade Robusta and Arabica green coffee beans directly from key procurement hubs in Dak Lak and Lam Dong. We guarantee strict export specs, reliable monthly volume, and competitive global FOB/CIF pricing.",
+                hero_desc_2: "All shipments are professionally processed, quality-inspected, and loaded for global delivery directly from <strong>Cat Lai Port, Ho Chi Minh City, Vietnam</strong>.",
                 btn_specs: "Explore Specifications",
                 btn_overview: "Company Overview",
                 hl_1_title: "Dak Lak & Lam Dong",
@@ -754,7 +745,7 @@
                 footer_tag2: "Dak Lak & Lam Dong Origins"
             },
             fr: {
-                pageTitle: "H-VIETNAM - Exportateur de Grains de Café Vert Premium du Vietnam",
+                pageTitle: "H-Vietnam Coffee - Exportateur de Grains de Café Vert du Vietnam (Robusta & Arabica)",
                 nav_about: "À propos de H-VIETNAM",
                 nav_specs: "Spécifications du Café",
                 nav_strengths: "Atouts à l'Exportation",
@@ -762,10 +753,11 @@
                 nav_contact: "Contactez-nous",
                 btn_rfq: "Demande de Devis (RFQ)",
                 lang_label: "Langue:",
-                hero_tag: "Exportateur Direct des Origines du Vietnam",
+                hero_tag: "EXPORTATEUR DIRECT DU VIETNAM | PORT DE CAT LAI, HO CHI MINH VILLE",
                 hero_title_middle: "Café — Fournisseur Fiable de",
                 hero_title_highlight: "Grains de Café Vert",
-                hero_desc: "Hao Vietnam Coffee Co., Ltd. fournit des grains de café vert Robusta et Arabica de haute qualité directement depuis les centres d'approvisionnement de Dak Lak et Lam Dong. Nous garantissons strictement les normes de qualité à l'exportation, un volume fiable et des prix FOB/CIF mondiaux compétitifs.",
+                hero_desc_1: "<strong>Hao Vietnam Coffee Co., Ltd.</strong> fournit des grains de café vert Robusta et Arabica de haute qualité directement depuis les centres d'approvisionnement de Dak Lak et Lam Dong. Nous garantissons des spécifications d'exportation strictes et des prix FOB/CIF compétitifs.",
+                hero_desc_2: "Toutes les expéditions sont traitées professionnellement, inspectées et chargées pour une livraison mondiale directement depuis le <strong>port de Cat Lai, Ho Chi Minh Ville, Vietnam</strong>.",
                 btn_specs: "Explorer les Spécifications",
                 btn_overview: "Présentation de l'Entreprise",
                 hl_1_title: "Dak Lak & Lam Dong",
@@ -841,7 +833,7 @@
                 footer_tag2: "Origines Dak Lak & Lam Dong"
             },
             ar: {
-                pageTitle: "H-VIETNAM - مصدّر حبوب القهوة الخضراء الفاخرة من فيتنام",
+                pageTitle: "H-Vietnam Coffee - مصدّر حبوب القهوة الخضراء الفاخرة من فيتنام (روبوستا وأرابيكا)",
                 nav_about: "عن الشركة",
                 nav_specs: "مواصفات القهوة",
                 nav_strengths: "مزايا التصدير",
@@ -849,10 +841,11 @@
                 nav_contact: "اتصل بنا",
                 btn_rfq: "طلب عرض سعر (RFQ)",
                 lang_label: "اللغة:",
-                hero_tag: "مصدّر مباشر من المناشير الفيتنامية",
+                hero_tag: "مصدّر مباشر من المناشير الفيتنامية | ميناء كات لاي، مدينة هو تشي منه",
                 hero_title_middle: "قهوة — المورد الموثوق لـ",
                 hero_title_highlight: "حبوب القهوة الخضراء",
-                hero_desc: "شركة هاو فيتنام للقهوة المحدودة تورد حبوب القهوة الخضراء روبوستا وأرابيكا عالية الجودة مباشرة من مراكز التوريد في داك لاك ولام دونغ. نحن نضمن بدقة مواصفات الدرجة التصديرية العالية، الحجم الموثوق، والأسعار التنافسية العالمية FOB/CIF.",
+                hero_desc_1: "تورد <strong>شركة هاو فيتنام للقهوة المحدودة</strong> حبوب القهوة الخضراء روبوستا وأرابيكا عالية الجودة مباشرة من مراكز التوريد في داك لاك ولام دونغ. نحن نضمن المواصفات التصديرية العالية والأسعار التنافسية.",
+                hero_desc_2: "يتم فحص وشحن جميع الطلبيات باحترافية للتسليم العالمي مباشرة من <strong>ميناء كات لاي، مدينة هو تشي منه، فيتنام</strong>.",
                 btn_specs: "استكشف المواصفات",
                 btn_overview: "نظرة عامة على الشركة",
                 hl_1_title: "داك لاك و لام دونغ",
@@ -928,7 +921,7 @@
                 footer_tag2: "مناشير داك لاك و لام دونغ"
             },
             ru: {
-                pageTitle: "H-VIETNAM - Премиальный экспорттер зеленых кофейных зерен из Вьетнама",
+                pageTitle: "H-Vietnam Coffee - Премиальный экспорттер зеленых кофейных зерен из Вьетнама",
                 nav_about: "О компании H-VIETNAM",
                 nav_specs: "Характеристики кофе",
                 nav_strengths: "Преимущества экспорта",
@@ -936,10 +929,11 @@
                 nav_contact: "Контакты",
                 btn_rfq: "Запросить цену (RFQ)",
                 lang_label: "Язык:",
-                hero_tag: "Прямой экспортер из регионов Вьетнама",
+                hero_tag: "ПРЯМОЙ ЭКСПОРТЕР ИЗ ВЬЕТНАМА | ПОРТ КАТЛАЙ, ХОШИМИН",
                 hero_title_middle: "Кофе — Надежный поставщик",
                 hero_title_highlight: "Зеленых кофейных зерен",
-                hero_desc: "ООО «Hao Vietnam Coffee» поставляет высококачественные зеленые кофейные зерна Робуста и Арабика напрямую из центров закупки в Даклаке и Ламдонге. Мы строго обеспечиваем высшие экспортные стандарты, надежные объемы и конкурентоспособные мировые цены FOB/CIF.",
+                hero_desc_1: "<strong>ООО «Hao Vietnam Coffee»</strong> поставляет высококачественные зеленые кофейные зерна Робуста и Арабика напрямую из центров закупки в Даклаке и Ламдонге. Мы строго обеспечиваем высшие экспортные стандарты и конкурентоспособные цены FOB/CIF.",
+                hero_desc_2: "Все партии профессионально обрабатываются и отгружаются для мировой доставки напрямую из <strong>порта Катлай, Хошимин, Вьетнам</strong>.",
                 btn_specs: "Изучить спецификации",
                 btn_overview: "О компании",
                 hl_1_title: "Даклак и Ламдонг",
@@ -1015,7 +1009,7 @@
                 footer_tag2: "Происхождение: Даклак и Ламдонг"
             },
             zh: {
-                pageTitle: "H-VIETNAM - 越南优质生咖啡豆出口商",
+                pageTitle: "H-Vietnam Coffee - 越南优质生咖啡豆出口商 (罗布斯塔 & 阿拉比卡)",
                 nav_about: "关于 H-VIETNAM",
                 nav_specs: "生咖啡豆规格",
                 nav_strengths: "出口优势",
@@ -1023,10 +1017,11 @@
                 nav_contact: "联系我们",
                 btn_rfq: "索取报价 (RFQ)",
                 lang_label: "语言:",
-                hero_tag: "越南产地直供出口商",
+                hero_tag: "越南原产地直供出口商 | 胡志明市吉莱港 (CAT LAI PORT)",
                 hero_title_middle: "咖啡 — 可靠的供应商",
                 hero_title_highlight: "优质生咖啡豆",
-                hero_desc: "越南豪越咖啡有限公司直接从多乐省（Dak Lak）和林同省（Lam Dong）的采购中心供应高品质罗布斯塔和阿拉比卡生咖啡豆。我们严格确保一流的出口级规格、可靠的供货量以及具竞争力的全球 FOB/CIF 价格。",
+                hero_desc_1: "<strong>越南豪越咖啡有限公司</strong>直接从多乐省和林同省的采购中心供应高品质罗布斯塔和阿拉比卡生咖啡豆。我们严格确保一流的出口级规格和具竞争力的全球 FOB/CIF 价格。",
+                hero_desc_2: "所有货物均经过专业加工与质量检验，直接从<strong>越南胡志明市吉莱港 (Cat Lai Port)</strong>装运并发送至全球。",
                 btn_specs: "浏览规格参数",
                 btn_overview: "公司概况",
                 hl_1_title: "多乐省 & 林同省",
@@ -1061,7 +1056,7 @@
                 str_4_title: "准时大宗供应",
                 str_4_desc: "在整个产季中保证准时的集装箱交付计划和持续的大容量供货能力。",
                 str_5_title: "加盟农户网络",
-                str_5_desc: "我们与1,0000户农户合作，年产量达数十万吨。选择我们，您可以享受比其他越南公司低约2%的价格优势。",
+                str_5_desc: "我们与10,000户农户合作，年产量达数十万吨。选择我们，您可以享受比其他越南公司低约2%的价格优势。",
                 prod_tag: "出口产品供应",
                 prod_title_suf: "出口规格",
                 prod_desc: "所有产品均采用60公斤净重全新单层麻袋包装，清洁、无霉变、无活虫或异味。",
@@ -1116,14 +1111,14 @@
             document.getElementById('langSelect').value = lang;
             document.getElementById('langSelectMobile').value = lang;
 
-            if (translations[lang].pageTitle) {
+            if (translations[lang] && translations[lang].pageTitle) {
                 document.getElementById('pageTitle').innerText = translations[lang].pageTitle;
             }
 
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
+                if (translations[lang] && translations[lang][key]) {
                     el.innerHTML = translations[lang][key];
                 }
             });
