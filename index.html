@@ -29,14 +29,15 @@
               extend: {
                   colors: {
                       brand: {
-                          darkCoffee: '#231712', /* Tone cà phê đậm */
-                          brown: '#3B2314',      /* Tone cà phê nguyên bản */
-                          lightCoffee: '#4E3120',/* Tone cà phê sáng */
-                          amber: '#8B5A2B',
+                          darkCoffee: '#3D281D', /* Đã làm sáng hơn màu tối cũ */
+                          brown: '#5C3A21',      /* Tone cà phê tươi & ấm */
+                          lightCoffee: '#7A5230',
+                          amber: '#B87333',
                           gold: '#D4AF37',
                           cream: '#FDFBF7',
-                          teal: '#124B63',       /* Màu xanh nước biển */
-                          oceanDark: '#0D3647',  /* Xanh nước biển đậm */
+                          softBlue: '#F0F7F9',   /* Phông nền xanh nhạt tươi mát */
+                          teal: '#124B63',       
+                          oceanDark: '#0D3647',  
                       }
                   },
                   fontFamily: {
@@ -82,13 +83,13 @@
         <div class="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 
-                <!-- Ocean Blue Brand Logo Rectangle (Tràn viền 100% chiều ngang trên mobile) -->
+                <!-- Ocean Blue Brand Logo Rectangle -->
                 <a href="#" class="flex items-center bg-brand-teal px-4 sm:px-4 py-3 sm:py-2 w-full sm:w-auto rounded-none sm:rounded-xl border-y sm:border border-teal-400/30 shadow-lg hover:brightness-110 transition-all duration-300">
                     <div class="flex items-center gap-3 w-full sm:w-auto">
                         <!-- Star & Coffee Bean Logo Icon -->
                         <div class="flex items-center justify-center w-10 h-10 flex-shrink-0">
                             <svg class="w-10 h-10 drop-shadow-md" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M50 4L62.8 33.2L94.5 35.8L70 56.8L77.8 88L50 71.5L22.2 88L30 56.8L5.5 35.8L37.2 33.2L50 4Z" fill="#3B2314" stroke="#D4AF37" stroke-width="4.5" stroke-linejoin="round"/>
+                                <path d="M50 4L62.8 33.2L94.5 35.8L70 56.8L77.8 88L50 71.5L22.2 88L30 56.8L5.5 35.8L37.2 33.2L50 4Z" fill="#5C3A21" stroke="#D4AF37" stroke-width="4.5" stroke-linejoin="round"/>
                                 <ellipse cx="50" cy="49" rx="13" ry="17" stroke="white" stroke-width="3.5" fill="none"/>
                                 <path d="M44 34C55 42 45 56 56 64" stroke="white" stroke-width="3.2" stroke-linecap="round"/>
                             </svg>
@@ -108,7 +109,6 @@
                     <a href="#about" class="hover:text-brand-gold transition-colors" data-i18n="nav_about">About H-VIETNAM</a>
                     <a href="#products" class="hover:text-brand-gold transition-colors" data-i18n="nav_specs">Green Coffee Specs</a>
                     <a href="#strengths" class="hover:text-brand-gold transition-colors" data-i18n="nav_strengths">Export Strengths</a>
-                    <a href="#shipping" class="hover:text-brand-gold transition-colors" data-i18n="nav_logistics">Global Logistics</a>
                     <a href="#contact" class="hover:text-brand-gold transition-colors" data-i18n="nav_contact">Contact Us</a>
                 </nav>
 
@@ -122,7 +122,7 @@
                         <option value="zh">中文 (ZH)</option>
                     </select>
 
-                    <a href="#contact" class="bg-gradient-to-r from-brand-amber to-brand-gold text-brand-darkCoffee font-bold px-5 py-2.5 rounded-lg shadow-md hover:brightness-110 transition-all flex items-center gap-2">
+                    <a href="#contact" class="bg-gradient-to-r from-brand-amber to-brand-gold text-white font-bold px-5 py-2.5 rounded-lg shadow-md hover:brightness-110 transition-all flex items-center gap-2">
                         <i class="fa-solid fa-paper-plane"></i> <span data-i18n="btn_rfq">Request Quote (RFQ)</span>
                     </a>
                 </div>
@@ -131,7 +131,7 @@
     </header>
 
     <!-- Mobile Language Bar -->
-    <div class="bg-brand-brown py-2 px-4 flex justify-between items-center text-xs border-b border-brand-amber/20 lg:hidden">
+    <div class="bg-brand-brown py-2 px-4 flex justify-between items-center text-xs border-b border-brand-amber/20 lg:hidden text-white">
         <span class="text-brand-gold font-bold" data-i18n="lang_label">Select Language:</span>
         <select id="langSelectMobile" onchange="changeLanguage(this.value)" class="bg-brand-darkCoffee text-brand-gold border border-brand-amber/40 rounded px-2 py-1 font-bold focus:outline-none">
             <option value="en">English (EN)</option>
@@ -142,12 +142,12 @@
         </select>
     </div>
 
-    <!-- Hero Section (Cleaned & Optimized) -->
-    <section class="relative bg-brand-darkCoffee text-white overflow-hidden py-20 lg:py-28 border-b border-brand-amber/20">
+    <!-- Hero Section (Làm phông nền cà phê tươi sáng hơn) -->
+    <section class="relative bg-gradient-to-b from-brand-brown via-brand-darkCoffee to-brand-brown text-white overflow-hidden py-20 lg:py-28 border-b border-brand-amber/20">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto text-center">
                 <!-- Export Tag -->
-                <div class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30 rounded-full px-4 py-1.5 mb-6 text-brand-gold text-xs uppercase tracking-widest font-semibold">
+                <div class="inline-flex items-center gap-2 bg-brand-gold/20 border border-brand-gold/40 rounded-full px-4 py-1.5 mb-6 text-brand-gold text-xs uppercase tracking-widest font-semibold">
                     <i class="fa-solid fa-globe"></i> <span data-i18n="hero_tag">DIRECT EXPORTER FROM VIETNAM ORIGINS | CAT LAI PORT, HO CHI MINH CITY</span>
                 </div>
                 
@@ -157,12 +157,12 @@
                 </h1>
                 
                 <!-- Paragraph 1 -->
-                <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-4 max-w-3xl mx-auto" data-i18n="hero_desc_1">
+                <p class="text-gray-100 text-base sm:text-lg leading-relaxed mb-4 max-w-3xl mx-auto" data-i18n="hero_desc_1">
                     <strong>Hao Vietnam Coffee Co., Ltd.</strong> supplies high-grade Robusta and Arabica green coffee beans directly from key procurement hubs in Dak Lak and Lam Dong. We guarantee strict export specs, reliable monthly volume, and competitive global FOB/CIF pricing.
                 </p>
 
-                <!-- Paragraph 2 (Cat Lai Port inclusion) -->
-                <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-8 max-w-3xl mx-auto" data-i18n="hero_desc_2">
+                <!-- Paragraph 2 -->
+                <p class="text-gray-100 text-base sm:text-lg leading-relaxed mb-8 max-w-3xl mx-auto" data-i18n="hero_desc_2">
                     All shipments are professionally processed, quality-inspected, and loaded for global delivery directly from <strong>Cat Lai Port, Ho Chi Minh City, Vietnam</strong>.
                 </p>
 
@@ -171,7 +171,7 @@
                     <a href="#products" class="bg-brand-gold text-brand-darkCoffee font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-yellow-400 transition-all" data-i18n="btn_specs">
                         Explore Specifications
                     </a>
-                    <a href="#contact" class="border border-brand-gold/40 text-brand-gold hover:bg-brand-gold hover:text-brand-darkCoffee px-8 py-4 rounded-xl font-semibold transition-all" data-i18n="btn_rfq">
+                    <a href="#contact" class="border border-brand-gold/60 text-brand-gold hover:bg-brand-gold hover:text-brand-darkCoffee px-8 py-4 rounded-xl font-semibold transition-all" data-i18n="btn_rfq">
                         Request Quote
                     </a>
                 </div>
@@ -179,31 +179,31 @@
         </div>
     </section>
 
-    <!-- Key Highlights Bar -->
-    <section class="bg-brand-brown text-white py-8 border-b border-brand-amber/20">
+    <!-- Key Highlights Bar (Phông nền xanh nhạt tươi mát xen kẽ) -->
+    <section class="bg-brand-softBlue text-gray-800 py-8 border-b border-teal-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-4 border-r border-white/10 last:border-0">
-                    <div class="text-brand-gold text-xl sm:text-2xl font-bold mb-1" data-i18n="hl_1_title">Dak Lak & Lam Dong</div>
-                    <div class="text-[11px] text-gray-300 uppercase tracking-wider" data-i18n="hl_1_sub">Raw Material Procurement Centers</div>
+                <div class="p-4 border-r border-teal-200/60 last:border-0">
+                    <div class="text-brand-teal text-xl sm:text-2xl font-bold mb-1" data-i18n="hl_1_title">Dak Lak & Lam Dong</div>
+                    <div class="text-[11px] text-gray-600 uppercase tracking-wider font-semibold" data-i18n="hl_1_sub">Raw Material Procurement Centers</div>
                 </div>
-                <div class="p-4 border-r border-white/10 last:border-0">
-                    <div class="text-brand-gold text-xl sm:text-2xl font-bold mb-1" data-i18n="hl_2_title">Screens 13 to 18</div>
-                    <div class="text-[11px] text-gray-300 uppercase tracking-wider" data-i18n="hl_2_sub">Cleaned & Wet Polished Robusta</div>
+                <div class="p-4 border-r border-teal-200/60 last:border-0">
+                    <div class="text-brand-teal text-xl sm:text-2xl font-bold mb-1" data-i18n="hl_2_title">Screens 13 to 18</div>
+                    <div class="text-[11px] text-gray-600 uppercase tracking-wider font-semibold" data-i18n="hl_2_sub">Cleaned & Wet Polished Robusta</div>
                 </div>
-                <div class="p-4 border-r border-white/10 last:border-0">
-                    <div class="text-brand-gold text-xl sm:text-2xl font-bold mb-1" data-i18n="hl_3_title">100% Inspected</div>
-                    <div class="text-[11px] text-gray-300 uppercase tracking-wider" data-i18n="hl_3_sub">Independent Quality Assurance</div>
+                <div class="p-4 border-r border-teal-200/60 last:border-0">
+                    <div class="text-brand-teal text-xl sm:text-2xl font-bold mb-1" data-i18n="hl_3_title">100% Inspected</div>
+                    <div class="text-[11px] text-gray-600 uppercase tracking-wider font-semibold" data-i18n="hl_3_sub">Independent Quality Assurance</div>
                 </div>
                 <div class="p-4">
-                    <div class="text-brand-gold text-xl sm:text-2xl font-bold mb-1" data-i18n="hl_4_title">Bulk Capacity</div>
-                    <div class="text-[11px] text-gray-300 uppercase tracking-wider" data-i18n="hl_4_sub">Export Packaging in 60kg Jute Bags</div>
+                    <div class="text-brand-teal text-xl sm:text-2xl font-bold mb-1" data-i18n="hl_4_title">Bulk Capacity</div>
+                    <div class="text-[11px] text-gray-600 uppercase tracking-wider font-semibold" data-i18n="hl_4_sub">Export Packaging in 60kg Jute Bags</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section with Interactive 8-Image Carousel -->
+    <!-- About Section (GIỮ NGUYÊN PHÔNG NỀN TRẮNG) -->
     <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -227,7 +227,7 @@
                 </div>
 
                 <!-- Interactive Image Slider -->
-                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-brand-darkCoffee group">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-brand-brown group">
                     
                     <div class="relative h-[480px] w-full">
                         
@@ -339,8 +339,8 @@
         </div>
     </section>
 
-    <!-- Export Strengths Section -->
-    <section id="strengths" class="py-16 bg-brand-brown text-white">
+    <!-- Export Strengths Section (Làm phông cà phê tươi hơn + thẻ nổi bật) -->
+    <section id="strengths" class="py-16 bg-gradient-to-r from-brand-brown via-[#6D4528] to-brand-brown text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-12">
                 <span class="text-brand-gold text-xs font-bold uppercase tracking-widest" data-i18n="strengths_tag">Core Competencies</span>
@@ -348,41 +348,41 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-brand-darkCoffee p-6 rounded-xl border border-brand-amber/30 space-y-3">
-                    <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center font-bold text-lg">1</div>
+                <div class="bg-brand-darkCoffee/80 p-6 rounded-xl border border-brand-amber/40 backdrop-blur-sm space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-lg">1</div>
                     <h3 class="font-bold text-lg text-white" data-i18n="str_1_title">High-Quality Products</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed" data-i18n="str_1_desc">Supplying premium Robusta green coffee beans across all screen sizes (13, 14, 16, 18) and Arabica (wet, dry, and honey methods).</p>
+                    <p class="text-xs text-gray-200 leading-relaxed" data-i18n="str_1_desc">Supplying premium Robusta green coffee beans across all screen sizes (13, 14, 16, 18) and Arabica (wet, dry, and honey methods).</p>
                 </div>
 
-                <div class="bg-brand-darkCoffee p-6 rounded-xl border border-brand-amber/30 space-y-3">
-                    <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center font-bold text-lg">2</div>
+                <div class="bg-brand-darkCoffee/80 p-6 rounded-xl border border-brand-amber/40 backdrop-blur-sm space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-lg">2</div>
                     <h3 class="font-bold text-lg text-white" data-i18n="str_2_title">Reasonable Pricing</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed" data-i18n="str_2_desc">Offering competitive price points suitable for all international market segments, from commercial roasters to specialty importers.</p>
+                    <p class="text-xs text-gray-200 leading-relaxed" data-i18n="str_2_desc">Offering competitive price points suitable for all international market segments, from commercial roasters to specialty importers.</p>
                 </div>
 
-                <div class="bg-brand-darkCoffee p-6 rounded-xl border border-brand-amber/30 space-y-3">
-                    <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center font-bold text-lg">3</div>
+                <div class="bg-brand-darkCoffee/80 p-6 rounded-xl border border-brand-amber/40 backdrop-blur-sm space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-lg">3</div>
                     <h3 class="font-bold text-lg text-white" data-i18n="str_3_title">Independent Inspection</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed" data-i18n="str_3_desc">Adhering strictly to independent quality inspection protocols to ensure delivered shipments meet committed contract specs.</p>
+                    <p class="text-xs text-gray-200 leading-relaxed" data-i18n="str_3_desc">Adhering strictly to independent quality inspection protocols to ensure delivered shipments meet committed contract specs.</p>
                 </div>
 
-                <div class="bg-brand-darkCoffee p-6 rounded-xl border border-brand-amber/30 space-y-3">
-                    <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center font-bold text-lg">4</div>
+                <div class="bg-brand-darkCoffee/80 p-6 rounded-xl border border-brand-amber/40 backdrop-blur-sm space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-lg">4</div>
                     <h3 class="font-bold text-lg text-white" data-i18n="str_4_title">Timely Bulk Supply</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed" data-i18n="str_4_desc">Guaranteeing on-time container delivery schedules and continuous high-volume supply capability throughout the crop season.</p>
+                    <p class="text-xs text-gray-200 leading-relaxed" data-i18n="str_4_desc">Guaranteeing on-time container delivery schedules and continuous high-volume supply capability throughout the crop season.</p>
                 </div>
 
-                <div class="bg-brand-darkCoffee p-6 rounded-xl border border-brand-amber/30 space-y-3">
-                    <div class="w-10 h-10 rounded-lg bg-brand-gold/10 text-brand-gold flex items-center justify-center font-bold text-lg">5</div>
+                <div class="bg-brand-darkCoffee/80 p-6 rounded-xl border border-brand-amber/40 backdrop-blur-sm space-y-3">
+                    <div class="w-10 h-10 rounded-lg bg-brand-gold/20 text-brand-gold flex items-center justify-center font-bold text-lg">5</div>
                     <h3 class="font-bold text-lg text-white" data-i18n="str_5_title">Network of affiliated farming households</h3>
-                    <p class="text-xs text-gray-300 leading-relaxed" data-i18n="str_5_desc">We collaborate with 10,000 farming households, with an output reaching hundreds of thousands of tons. By choosing us, you can benefit from prices approximately 2% lower than those offered by other Vietnamese companies.</p>
+                    <p class="text-xs text-gray-200 leading-relaxed" data-i18n="str_5_desc">We collaborate with 10,000 farming households, with an output reaching hundreds of thousands of tons. By choosing us, you can benefit from prices approximately 2% lower than those offered by other Vietnamese companies.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Specifications Section -->
-    <section id="products" class="py-20 bg-brand-cream">
+    <!-- Product Specifications Section (Xen kẽ Phông nền Xanh Nhạt SoftBlue tươi sáng) -->
+    <section id="products" class="py-20 bg-brand-softBlue">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-brand-amber text-xs font-bold uppercase tracking-widest" data-i18n="prod_tag">Products Supplied for Export</span>
@@ -393,8 +393,8 @@
             <!-- Product Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Product 1 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-200 flex flex-col">
-                    <div class="p-6 bg-brand-darkCoffee text-white">
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-teal-100 flex flex-col">
+                    <div class="p-6 bg-brand-brown text-white">
                         <span class="text-xs font-bold text-brand-gold uppercase tracking-wider" data-i18n="prod_badge_1">Grade 1 • Cleaned</span>
                         <h3 class="text-xl font-bold font-serif mt-1">Robusta Screen 18 Cleaned</h3>
                     </div>
@@ -412,8 +412,8 @@
                 </div>
 
                 <!-- Product 2 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-200 flex flex-col">
-                    <div class="p-6 bg-brand-darkCoffee text-white">
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-teal-100 flex flex-col">
+                    <div class="p-6 bg-brand-brown text-white">
                         <span class="text-xs font-bold text-brand-gold uppercase tracking-wider" data-i18n="prod_badge_2">Grade 1 • Wet Polished</span>
                         <h3 class="text-xl font-bold font-serif mt-1">Robusta Screen 18 Wet Polished</h3>
                     </div>
@@ -431,8 +431,8 @@
                 </div>
 
                 <!-- Product 3 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-200 flex flex-col">
-                    <div class="p-6 bg-brand-darkCoffee text-white">
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-teal-100 flex flex-col">
+                    <div class="p-6 bg-brand-brown text-white">
                         <span class="text-xs font-bold text-brand-gold uppercase tracking-wider" data-i18n="prod_badge_1">Grade 1 • Cleaned</span>
                         <h3 class="text-xl font-bold font-serif mt-1">Robusta Screen 16 Cleaned</h3>
                     </div>
@@ -450,8 +450,8 @@
                 </div>
 
                 <!-- Product 4 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-200 flex flex-col">
-                    <div class="p-6 bg-brand-darkCoffee text-white">
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-teal-100 flex flex-col">
+                    <div class="p-6 bg-brand-brown text-white">
                         <span class="text-xs font-bold text-brand-gold uppercase tracking-wider" data-i18n="prod_badge_2">Grade 1 • Wet Polished</span>
                         <h3 class="text-xl font-bold font-serif mt-1">Robusta Screen 16 Wet Polished</h3>
                     </div>
@@ -469,8 +469,8 @@
                 </div>
 
                 <!-- Product 5 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-200 flex flex-col">
-                    <div class="p-6 bg-brand-darkCoffee text-white">
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-teal-100 flex flex-col">
+                    <div class="p-6 bg-brand-brown text-white">
                         <span class="text-xs font-bold text-brand-gold uppercase tracking-wider" data-i18n="prod_badge_3">Grade 1 • Standard</span>
                         <h3 class="text-xl font-bold font-serif mt-1">Robusta Screen 16 Standard</h3>
                     </div>
@@ -488,8 +488,8 @@
                 </div>
 
                 <!-- Product 6 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-200 flex flex-col">
-                    <div class="p-6 bg-brand-darkCoffee text-white">
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-teal-100 flex flex-col">
+                    <div class="p-6 bg-brand-brown text-white">
                         <span class="text-xs font-bold text-brand-gold uppercase tracking-wider" data-i18n="prod_badge_4">Grade 2 • Standard</span>
                         <h3 class="text-xl font-bold font-serif mt-1">Robusta Screen 13 Standard</h3>
                     </div>
@@ -509,27 +509,8 @@
         </div>
     </section>
 
-    <!-- Shipping Lines & Logistics Section -->
-    <section id="shipping" class="py-16 bg-white border-t border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-10">
-                <span class="text-brand-amber text-xs font-bold uppercase tracking-widest" data-i18n="ship_tag">Global Freight Logistics</span>
-                <h2 class="font-serif text-3xl font-bold text-brand-darkCoffee mt-1" data-i18n="ship_title">Partner Ocean Shipping Lines</h2>
-                <p class="text-gray-600 mt-2 text-sm" data-i18n="ship_desc">H-VIETNAM works closely with top ocean carriers to ensure worldwide container shipping schedules.</p>
-            </div>
-
-            <div class="flex flex-wrap items-center justify-center gap-8 md:gap-14 opacity-80">
-                <span class="text-2xl font-black text-blue-900 tracking-tighter">CMA CGM</span>
-                <span class="text-2xl font-black text-gray-800 tracking-wider">MSC</span>
-                <span class="text-2xl font-black text-pink-600 tracking-tight">ONE</span>
-                <span class="text-2xl font-black text-red-700">YANG MING</span>
-                <span class="text-2xl font-black text-orange-600">Hapag-Lloyd</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & RFQ Form -->
-    <section id="contact" class="py-20 bg-brand-darkCoffee text-white relative">
+    <!-- Contact & RFQ Form (Phông nền làm tươi hơn với gradient) -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-brand-brown via-brand-darkCoffee to-brand-oceanDark text-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 
@@ -538,74 +519,74 @@
                     <div>
                         <span class="text-brand-gold text-xs font-bold uppercase tracking-widest" data-i18n="contact_tag">Contact Information</span>
                         <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2"><span data-i18n="contact_title_pre">Connect with</span> <span class="brand-logo-text"><span class="hv-large">H-V</span><span class="ietnam-small">IETNAM</span></span></h2>
-                        <p class="text-gray-300 mt-3 text-sm" data-i18n="contact_desc">Send your inquiry directly to our export desk. We reply within 24 business hours.</p>
+                        <p class="text-gray-200 mt-3 text-sm" data-i18n="contact_desc">Send your inquiry directly to our export desk. We reply within 24 business hours.</p>
                     </div>
 
                     <div class="space-y-6 text-sm">
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-brand-brown border border-brand-gold/30 flex items-center justify-center text-brand-gold flex-shrink-0">
+                            <div class="w-10 h-10 rounded-lg bg-brand-brown border border-brand-gold/40 flex items-center justify-center text-brand-gold flex-shrink-0">
                                 <i class="fa-solid fa-building"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-brand-gold" data-i18n="addr_head">Company Head Office</h4>
-                                <p class="text-gray-300" data-i18n="addr_head_val">Hao Vietnam Coffee Co., Ltd.<br>Plot 40, Lot 7, Duong De Residential Area, Bac Nha Trang Ward, Khanh Hoa Province, Vietnam</p>
+                                <p class="text-gray-200" data-i18n="addr_head_val">Hao Vietnam Coffee Co., Ltd.<br>Plot 40, Lot 7, Duong De Residential Area, Bac Nha Trang Ward, Khanh Hoa Province, Vietnam</p>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-brand-brown border border-brand-gold/30 flex items-center justify-center text-brand-gold flex-shrink-0">
+                            <div class="w-10 h-10 rounded-lg bg-brand-brown border border-brand-gold/40 flex items-center justify-center text-brand-gold flex-shrink-0">
                                 <i class="fa-solid fa-warehouse"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-brand-gold" data-i18n="addr_ware">Procurement & Logistics Centers</h4>
-                                <p class="text-gray-300" data-i18n="addr_ware_val">Dak Lak Province and Lam Dong Province, Vietnam</p>
+                                <p class="text-gray-200" data-i18n="addr_ware_val">Dak Lak Province and Lam Dong Province, Vietnam</p>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-brand-brown border border-brand-gold/30 flex items-center justify-center text-brand-gold flex-shrink-0">
+                            <div class="w-10 h-10 rounded-lg bg-brand-brown border border-brand-gold/40 flex items-center justify-center text-brand-gold flex-shrink-0">
                                 <i class="fa-brands fa-whatsapp text-lg"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-brand-gold" data-i18n="addr_wa">WhatsApp / Direct Line</h4>
-                                <p class="text-gray-300">+84 974 506 990</p>
+                                <p class="text-gray-200">+84 974 506 990</p>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-brand-brown border border-brand-gold/30 flex items-center justify-center text-brand-gold flex-shrink-0">
+                            <div class="w-10 h-10 rounded-lg bg-brand-brown border border-brand-gold/40 flex items-center justify-center text-brand-gold flex-shrink-0">
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-brand-gold" data-i18n="addr_email">Email Contact</h4>
-                                <p class="text-gray-300">haovietnamcoffee@gmail.com</p>
+                                <p class="text-gray-200">haovietnamcoffee@gmail.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- RFQ Form -->
-                <div class="bg-brand-brown p-8 rounded-2xl border border-brand-amber/30 shadow-2xl">
+                <div class="bg-brand-brown/90 p-8 rounded-2xl border border-brand-gold/30 shadow-2xl backdrop-blur-md">
                     <h3 class="text-xl font-bold font-serif text-white mb-6" data-i18n="form_title">Request Export Quotation (RFQ)</h3>
                     <form id="rfqForm" class="space-y-4 text-sm" onsubmit="sendToWhatsApp(event)">
                         <div>
-                            <label class="block text-gray-300 font-semibold mb-1" data-i18n="form_company">Company / Importer Name *</label>
-                            <input type="text" id="companyName" required placeholder="e.g. Global Coffee Importers Ltd." class="w-full bg-brand-darkCoffee border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                            <label class="block text-gray-200 font-semibold mb-1" data-i18n="form_company">Company / Importer Name *</label>
+                            <input type="text" id="companyName" required placeholder="e.g. Global Coffee Importers Ltd." class="w-full bg-brand-darkCoffee border border-gray-600 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-gray-300 font-semibold mb-1" data-i18n="form_email">Corporate Email *</label>
-                                <input type="email" id="userEmail" required placeholder="name@company.com" class="w-full bg-brand-darkCoffee border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                                <label class="block text-gray-200 font-semibold mb-1" data-i18n="form_email">Corporate Email *</label>
+                                <input type="email" id="userEmail" required placeholder="name@company.com" class="w-full bg-brand-darkCoffee border border-gray-600 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                             </div>
                             <div>
-                                <label class="block text-gray-300 font-semibold mb-1" data-i18n="form_phone">WhatsApp / Phone *</label>
-                                <input type="tel" id="userPhone" required placeholder="+1 234 567 8900" class="w-full bg-brand-darkCoffee border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                                <label class="block text-gray-200 font-semibold mb-1" data-i18n="form_phone">WhatsApp / Phone *</label>
+                                <input type="tel" id="userPhone" required placeholder="+1 234 567 8900" class="w-full bg-brand-darkCoffee border border-gray-600 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                             </div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-gray-300 font-semibold mb-1" data-i18n="form_grade">Required Coffee Grade</label>
-                                <select id="coffeeGrade" class="w-full bg-brand-darkCoffee border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                                <label class="block text-gray-200 font-semibold mb-1" data-i18n="form_grade">Required Coffee Grade</label>
+                                <select id="coffeeGrade" class="w-full bg-brand-darkCoffee border border-gray-600 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                                     <option>Robusta Screen 18 Cleaned</option>
                                     <option>Robusta Screen 18 Wet Polished</option>
                                     <option>Robusta Screen 16 Cleaned</option>
@@ -616,15 +597,15 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-gray-300 font-semibold mb-1" data-i18n="form_qty">Quantity (Containers / Tons)</label>
-                                <input type="text" id="quantity" placeholder="e.g. 20ft FCL (19.2 Tons)" class="w-full bg-brand-darkCoffee border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
+                                <label class="block text-gray-200 font-semibold mb-1" data-i18n="form_qty">Quantity (Containers / Tons)</label>
+                                <input type="text" id="quantity" placeholder="e.g. 20ft FCL (19.2 Tons)" class="w-full bg-brand-darkCoffee border border-gray-600 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-gray-300 font-semibold mb-1" data-i18n="form_dest">Destination Port & Delivery Terms</label>
-                            <textarea id="destination" rows="3" placeholder="Specify destination port and preferred incoterms (FOB / CIF)..." class="w-full bg-brand-darkCoffee border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold"></textarea>
+                            <label class="block text-gray-200 font-semibold mb-1" data-i18n="form_dest">Destination Port & Delivery Terms</label>
+                            <textarea id="destination" rows="3" placeholder="Specify destination port and preferred incoterms (FOB / CIF)..." class="w-full bg-brand-darkCoffee border border-gray-600 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-gold"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-gradient-to-r from-brand-amber to-brand-gold text-brand-darkCoffee font-bold py-3.5 rounded-lg shadow-lg hover:brightness-110 transition-all uppercase tracking-wider text-sm flex items-center justify-center gap-2">
+                        <button type="submit" class="w-full bg-gradient-to-r from-brand-amber to-brand-gold text-white font-bold py-3.5 rounded-lg shadow-lg hover:brightness-110 transition-all uppercase tracking-wider text-sm flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp text-lg"></i> <span data-i18n="form_submit">Submit Inquiry via WhatsApp</span>
                         </button>
                     </form>
@@ -661,7 +642,6 @@
                 nav_about: "About H-VIETNAM",
                 nav_specs: "Green Coffee Specs",
                 nav_strengths: "Export Strengths",
-                nav_logistics: "Global Logistics",
                 nav_contact: "Contact Us",
                 btn_rfq: "Request Quote (RFQ)",
                 lang_label: "Language:",
@@ -720,9 +700,6 @@
                 spec_packing: "Packing:",
                 spec_pack_val: "In 60kg Net Single New Jute Bag",
                 btn_quote: "Request Quote",
-                ship_tag: "Global Freight Logistics",
-                ship_title: "Partner Ocean Shipping Lines",
-                ship_desc: "H-VIETNAM works closely with top ocean carriers to ensure worldwide container shipping schedules.",
                 contact_tag: "Contact Information",
                 contact_title_pre: "Connect with",
                 contact_desc: "Send your inquiry directly to our export desk. We reply within 24 business hours.",
@@ -749,7 +726,6 @@
                 nav_about: "À propos de H-VIETNAM",
                 nav_specs: "Spécifications du Café",
                 nav_strengths: "Atouts à l'Exportation",
-                nav_logistics: "Logistique Mondiale",
                 nav_contact: "Contactez-nous",
                 btn_rfq: "Demande de Devis (RFQ)",
                 lang_label: "Langue:",
@@ -808,9 +784,6 @@
                 spec_packing: "Emballage:",
                 spec_pack_val: "En sac de jute neuf simple de 60 kg net",
                 btn_quote: "Demander un Devis",
-                ship_tag: "Logistique de Fret Mondial",
-                ship_title: "Compagnies Maritimes Partenaires",
-                ship_desc: "H-VIETNAM travaille en étroite collaboration avec les principaux armateurs pour assurer des calendriers d'expédition de conteneurs dans le monde entier.",
                 contact_tag: "Informations de Contact",
                 contact_title_pre: "Connectez-vous avec",
                 contact_desc: "Envoyez votre demande directement à notre bureau des exportations. Nous répondons dans les 24 heures ouvrables.",
@@ -837,7 +810,6 @@
                 nav_about: "عن الشركة",
                 nav_specs: "مواصفات القهوة",
                 nav_strengths: "مزايا التصدير",
-                nav_logistics: "الخدمات اللوجستية",
                 nav_contact: "اتصل بنا",
                 btn_rfq: "طلب عرض سعر (RFQ)",
                 lang_label: "اللغة:",
@@ -896,9 +868,6 @@
                 spec_packing: "التعبئة:",
                 spec_pack_val: "في كيس خيش جديد مفرد صافي 60 كجم",
                 btn_quote: "طلب عرض سعر",
-                ship_tag: "لوجستيات الشحن العالمي",
-                ship_title: "خطوط الشحن البحري الشريكة",
-                ship_desc: "تعمل H-VIETNAM عن كثب مع كبرى شركات الشحن البحري لضمان جداول شحن الحاويات في جميع أنحاء العالم.",
                 contact_tag: "معلومات الاتصال",
                 contact_title_pre: "تواصل مع",
                 contact_desc: "أرسل استفسارك مباشرة إلى مكتب التصدير الخاص بنا. نرد خلال 24 ساعة عمل.",
@@ -925,7 +894,6 @@
                 nav_about: "О компании H-VIETNAM",
                 nav_specs: "Характеристики кофе",
                 nav_strengths: "Преимущества экспорта",
-                nav_logistics: "Мировая логистика",
                 nav_contact: "Контакты",
                 btn_rfq: "Запросить цену (RFQ)",
                 lang_label: "Язык:",
@@ -984,9 +952,6 @@
                 spec_packing: "Упаковка:",
                 spec_pack_val: "В новом джутовом мешке весом 60 кг",
                 btn_quote: "Запросить цену",
-                ship_tag: "Глобальная логистика",
-                ship_title: "Морские судоходные линии-партнеры",
-                ship_desc: "H-VIETNAM тесно сотрудничает с ведущими морскими перевозчиками для обеспечения надежных графиков контейнерных перевозок по всему миру.",
                 contact_tag: "Контактная информация",
                 contact_title_pre: "Связаться с",
                 contact_desc: "Отправьте ваш запрос напрямую в наш экспортный отдел. Мы ответим в течение 24 рабочих часов.",
@@ -1013,7 +978,6 @@
                 nav_about: "关于 H-VIETNAM",
                 nav_specs: "生咖啡豆规格",
                 nav_strengths: "出口优势",
-                nav_logistics: "全球物流",
                 nav_contact: "联系我们",
                 btn_rfq: "索取报价 (RFQ)",
                 lang_label: "语言:",
@@ -1072,9 +1036,6 @@
                 spec_packing: "包装:",
                 spec_pack_val: "60公斤净重全新麻袋",
                 btn_quote: "索取报价",
-                ship_tag: "全球货运物流",
-                ship_title: "合作船公司",
-                ship_desc: "H-VIETNAM 与各大远洋承运商紧密合作，确保全球集装箱航运班期的稳定可靠。",
                 contact_tag: "联系信息",
                 contact_title_pre: "与",
                 contact_desc: "直接将您的询盘发送至我们的出口部。我们将在24个工作小时内回复。",
